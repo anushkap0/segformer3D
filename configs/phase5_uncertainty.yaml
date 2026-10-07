@@ -1,0 +1,38 @@
+# Phase 5 (MC-Dropout path): no retraining needed -- reuses the Phase 2 checkpoint
+# and model config, just runs multi-sample stochastic inference at eval time.
+# Run with: python src/uncertainty_eval.py --config configs/phase5_uncertainty.yaml \
+#             --checkpoint checkpoints/phase2/best.pt --num_samples 20
+experiment_name: phase5_uncertainty_mc_dropout
+phase: 5
+model:
+  type: segformer3d_boundary
+  in_channels: 4
+  num_classes: 3
+  embed_dims: [32, 64, 160, 256]
+  num_heads: [1, 2, 5, 8]
+  sr_ratios: [8, 4, 2, 1]
+  depths: [2, 2, 2, 2]
+  decoder_dim: 128
+  drop_path_rate: 0.1
+  voxel_spacing: [1.0, 1.0, 1.0]
+
+data:
+  data_dir: data/processed/BraTS
+  manifest: data/processed/BraTS/split_manifest.json
+  patch_size: [128, 128, 128]
+  mutually_exclusive: false
+
+eval:
+  eval_output: refined_logits
+  threshold: 0.5
+
+uncertainty:
+  method: mc_dropout
+  num_samples: 20
+  # Note: the decoder's nn.Dropout3d rate is currently 0.1 (set in AllMLPDecoder3D's
+  # `dropout` arg, hardcoded via decoder_dim in build_model). For meaningfully varied
+  # MC-Dropout samples, consider bumping decoder dropout to 0.2-0.3 specifically for
+  # a dedicated Phase 5 training run rather than reusing the Phase 2 checkpoint as-is
+  # -- 0.1 was tuned for Phase 2's segmentation accuracy, not for uncertainty spread,
+  # and those two objectives can pull the dropout rate in different directions.
+  output_dir: logs/phase5_uncertainty

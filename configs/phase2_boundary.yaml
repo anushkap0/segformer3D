@@ -1,0 +1,52 @@
+experiment_name: phase2_boundary
+phase: 2
+model:
+  type: segformer3d_boundary
+  in_channels: 4
+  num_classes: 3
+  embed_dims: [32, 64, 160, 256]
+  num_heads: [1, 2, 5, 8]
+  sr_ratios: [8, 4, 2, 1]
+  depths: [2, 2, 2, 2]
+  decoder_dim: 128
+  drop_path_rate: 0.1
+  # voxel_spacing here should match the target_spacing used in prepare_brats.py,
+  # since Sobel3D rescales gradients per-axis using this value
+  voxel_spacing: [1.0, 1.0, 1.0]
+  # if you fine-tune from a Phase 1 checkpoint, set this (recommended -- boundary
+  # branch converges faster warm-started from a trained region branch)
+  init_from_phase1_checkpoint: checkpoints/phase1/best.pt
+
+data:
+  data_dir: data/processed/BraTS
+  manifest: data/processed/BraTS/split_manifest.json
+  patch_size: [128, 128, 128]
+  mutually_exclusive: false
+  return_boundary_target: true
+
+train:
+  batch_size: 2
+  num_workers: 8
+  epochs: 200
+  optimizer: adamw
+  lr: 1.0e-4              # lower than phase1 since warm-starting
+  weight_decay: 1.0e-5
+  lr_schedule: cosine
+  warmup_epochs: 5
+  loss:
+    type: dual_supervision_composite
+    region_weight: 1.0
+    refined_weight: 1.0
+    boundary_weight: 0.5
+  val_interval: 5
+  amp: true
+  grad_clip_norm: 1.0
+  checkpoint_dir: checkpoints/phase2
+  log_dir: logs/phase2
+
+eval:
+  sliding_window: true
+  sw_overlap: 0.5
+  threshold: 0.5
+  # which output head to evaluate for the headline Dice/HD95 numbers
+  eval_output: refined_logits   # one of: region_logits, refined_logits

@@ -1,0 +1,9 @@
+data/
+checkpoints/
+logs/
+*.pt
+*.npy
+*.nii.gz
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

@@ -1,0 +1,40 @@
+# Phase 3: train on BraTS (reuses phase2's best checkpoint), evaluate zero-shot on
+# MSD Task01 (brain tumour) to quantify domain shift. Set --finetune on the CLI to
+# also report fine-tuned numbers.
+experiment_name: phase3_generalization
+phase: 3
+model:
+  type: segformer3d_boundary
+  in_channels: 4
+  num_classes: 3
+  embed_dims: [32, 64, 160, 256]
+  num_heads: [1, 2, 5, 8]
+  sr_ratios: [8, 4, 2, 1]
+  depths: [2, 2, 2, 2]
+  decoder_dim: 128
+  drop_path_rate: 0.1
+  voxel_spacing: [1.0, 1.0, 1.0]
+  checkpoint: checkpoints/phase2/best.pt
+
+source_data:
+  data_dir: data/processed/BraTS
+  manifest: data/processed/BraTS/split_manifest.json
+
+target_data:
+  data_dir: data/processed/MSD_Task01
+  manifest: data/processed/MSD_Task01/split_manifest.json
+  patch_size: [128, 128, 128]
+  mutually_exclusive: false
+
+finetune:
+  epochs: 30
+  lr: 5.0e-5
+  checkpoint_dir: checkpoints/phase3_finetuned
+  log_dir: logs/phase3_finetuned
+
+eval:
+  sliding_window: true
+  sw_overlap: 0.5
+  threshold: 0.5
+  eval_output: refined_logits
+  results_dir: logs/phase3_generalization

@@ -1,0 +1,50 @@
+# Ablation D: same as phase2_boundary but with boundary_weight doubled, to check
+# sensitivity of final Dice/HD95 to how strongly the boundary loss is weighted
+# relative to the region losses.
+experiment_name: phase2_ablation_boundary_weight_high
+phase: 2
+model:
+  type: segformer3d_boundary
+  in_channels: 4
+  num_classes: 3
+  embed_dims: [32, 64, 160, 256]
+  num_heads: [1, 2, 5, 8]
+  sr_ratios: [8, 4, 2, 1]
+  depths: [2, 2, 2, 2]
+  decoder_dim: 128
+  drop_path_rate: 0.1
+  voxel_spacing: [1.0, 1.0, 1.0]
+  init_from_phase1_checkpoint: checkpoints/phase1/best.pt
+
+data:
+  data_dir: data/processed/BraTS
+  manifest: data/processed/BraTS/split_manifest.json
+  patch_size: [128, 128, 128]
+  mutually_exclusive: false
+  return_boundary_target: true
+
+train:
+  batch_size: 2
+  num_workers: 8
+  epochs: 200
+  optimizer: adamw
+  lr: 1.0e-4
+  weight_decay: 1.0e-5
+  lr_schedule: cosine
+  warmup_epochs: 5
+  loss:
+    type: dual_supervision_composite
+    region_weight: 1.0
+    refined_weight: 1.0
+    boundary_weight: 1.0   # <-- doubled from phase2_boundary.yaml's 0.5
+  val_interval: 5
+  amp: true
+  grad_clip_norm: 1.0
+  checkpoint_dir: checkpoints/phase2_ablation_boundary_weight_high
+  log_dir: logs/phase2_ablation_boundary_weight_high
+
+eval:
+  sliding_window: true
+  sw_overlap: 0.5
+  threshold: 0.5
+  eval_output: refined_logits
