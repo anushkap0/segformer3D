@@ -205,7 +205,12 @@ scripts/prepare_brats.py         # preprocessing / manifest generation
 ```
 ## References
 [1] Perera, S. et al. SegFormer3D: An Efficient Transformer for 3D Medical Image Segmentation. arXiv:2404.10156, 2024. https://arxiv.org/abs/2404.10156
+
 [2] Enhancing medical image segmentation via complementary CNN-transformer fusion and boundary perception (PFF-Net). Frontiers in Computer Science, 2025. https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2025.1677905/full
+
 [3] TokenSeg: Efficient 3D Medical Image Segmentation via Hierarchical Visual Token Compression. arXiv:2601.04519. https://arxiv.org/pdf/2601.04519
+
 [4] SegDINO: Introducing Multi-Scale Structure into DINO for Efficient Medical Image Segmentation. arXiv:2606.17972. https://arxiv.org/pdf/2606.17972
+
 [5] ODFormer: Semantic Fundus Image Segmentation Using Transformer for Optic Nerve Head Detection. arXiv:2405.09552. https://arxiv.org/pdf/2405.09552
+
