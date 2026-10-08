@@ -1,6 +1,6 @@
-data/
-checkpoints/
-logs/
+/data/
+/checkpoints/
+/logs/
 *.pt
 *.npy
 *.nii.gz
