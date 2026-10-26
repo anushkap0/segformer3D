@@ -1,0 +1,52 @@
+{
+  "v2_phase1_baseline": {
+    "params_M": 4.525251,
+    "gmacs": 15.546974208,
+    "ms_median": 7.831927388906479,
+    "peak_mem_MB": 407.43603515625
+  },
+  "v2_phase2_boundary": {
+    "params_M": 5.363655,
+    "gmacs": 42.985684992,
+    "ms_median": 8.76319408416748,
+    "peak_mem_MB": 465.35400390625
+  },
+  "phase4_baselines": {
+    "params_M": 22.583875,
+    "gmacs": 481.17055488,
+    "ms_median": 22.516079246997833,
+    "peak_mem_MB": 1183.60107421875
+  },
+  "phase1_baseline": {
+    "params_M": 6.038659,
+    "gmacs": 6.38713856
+  },
+  "phase2_boundary": {
+    "params_M": 6.843911,
+    "gmacs": 32.75210752
+  },
+  "v2_phase1_continued": {
+    "params_M": 4.525251,
+    "gmacs": 15.546974208,
+    "ms_median": 7.798295468091965,
+    "peak_mem_MB": 408.27197265625
+  },
+  "v2_abl_noloss": {
+    "params_M": 5.363655,
+    "gmacs": 42.985684992,
+    "ms_median": 8.766695857048035,
+    "peak_mem_MB": 428.63525390625
+  },
+  "v2_phase2_boundary_s2": {
+    "params_M": 5.363655,
+    "gmacs": 42.985684992,
+    "ms_median": 12.291990220546722,
+    "peak_mem_MB": 428.43212890625
+  },
+  "v2_abl_noloss_s2": {
+    "params_M": 5.363655,
+    "gmacs": 42.985684992,
+    "ms_median": 12.385211884975433,
+    "peak_mem_MB": 428.43212890625
+  }
+}

@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/segformer3D/src/evaluate.py", line 18, in <module>
+    import numpy as np
+  File "/usr/local/lib/python3.10/dist-packages/numpy/__init__.py", line 152, in <module>
+    from . import random
+  File "/usr/local/lib/python3.10/dist-packages/numpy/random/__init__.py", line 180, in <module>
+    from . import _pickle
+  File "/usr/local/lib/python3.10/dist-packages/numpy/random/_pickle.py", line 1, in <module>
+    from .mtrand import RandomState
+  File "mtrand.pyx", line 1, in init numpy.random.mtrand
+  File "bit_generator.pyx", line 38, in init numpy.random.bit_generator
+  File "/usr/lib/python3.10/secrets.py", line 18, in <module>
+    from hmac import compare_digest
+  File "/usr/lib/python3.10/hmac.py", line 8, in <module>
+    import _hashlib as _hashopenssl
+KeyboardInterrupt

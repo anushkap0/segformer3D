@@ -1,0 +1,4708 @@
+{
+ "BRATS_001": {
+  "matches": [
+   "BraTS2021_01411"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_002": {
+  "matches": [
+   "BraTS2021_01412"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_003": {
+  "matches": [
+   "BraTS2021_01413"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_004": {
+  "matches": [
+   "BraTS2021_01414"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_005": {
+  "matches": [
+   "BraTS2021_01415"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_006": {
+  "matches": [
+   "BraTS2021_01416"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_007": {
+  "matches": [
+   "BraTS2021_01417"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_008": {
+  "matches": [
+   "BraTS2021_01418"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_009": {
+  "matches": [
+   "BraTS2021_01419"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_010": {
+  "matches": [
+   "BraTS2021_01420"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_011": {
+  "matches": [
+   "BraTS2021_01421"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_012": {
+  "matches": [
+   "BraTS2021_01422"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_013": {
+  "matches": [
+   "BraTS2021_01423"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_014": {
+  "matches": [
+   "BraTS2021_01424"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_015": {
+  "matches": [
+   "BraTS2021_01425"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_016": {
+  "matches": [
+   "BraTS2021_01426"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_017": {
+  "matches": [
+   "BraTS2021_01427"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_018": {
+  "matches": [
+   "BraTS2021_01428"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_019": {
+  "matches": [
+   "BraTS2021_01429"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_020": {
+  "matches": [
+   "BraTS2021_01430"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_021": {
+  "matches": [
+   "BraTS2021_01431"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_022": {
+  "matches": [
+   "BraTS2021_01432"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_023": {
+  "matches": [
+   "BraTS2021_01433"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_024": {
+  "matches": [
+   "BraTS2021_01434"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_025": {
+  "matches": [
+   "BraTS2021_01435"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_026": {
+  "matches": [
+   "BraTS2021_01436"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_027": {
+  "matches": [
+   "BraTS2021_01437"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_028": {
+  "matches": [
+   "BraTS2021_01438"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_029": {
+  "matches": [
+   "BraTS2021_01439"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_030": {
+  "matches": [
+   "BraTS2021_01440"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_031": {
+  "matches": [
+   "BraTS2021_01525"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_032": {
+  "matches": [
+   "BraTS2021_01495"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_033": {
+  "matches": [
+   "BraTS2021_01139"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_034": {
+  "matches": [
+   "BraTS2021_01496"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_035": {
+  "matches": [
+   "BraTS2021_01470"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_036": {
+  "matches": [
+   "BraTS2021_01146"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_037": {
+  "matches": [
+   "BraTS2021_00133"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_038": {
+  "matches": [
+   "BraTS2021_01302"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_039": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_040": {
+  "matches": [
+   "BraTS2021_01456"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_041": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_042": {
+  "matches": [
+   "BraTS2021_01500"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_043": {
+  "matches": [
+   "BraTS2021_01290"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_044": {
+  "matches": [
+   "BraTS2021_01464"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_045": {
+  "matches": [
+   "BraTS2021_01447"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_046": {
+  "matches": [
+   "BraTS2021_01460"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_047": {
+  "matches": [
+   "BraTS2021_01479"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_048": {
+  "matches": [
+   "BraTS2021_01283"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_049": {
+  "matches": [
+   "BraTS2021_01468"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_050": {
+  "matches": [
+   "BraTS2021_01002"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_051": {
+  "matches": [
+   "BraTS2021_01303"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_052": {
+  "matches": [
+   "BraTS2021_01487"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_053": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_054": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_055": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_056": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_057": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_058": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_059": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_060": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_061": {
+  "matches": [
+   "BraTS2021_01140"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_062": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_063": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_064": {
+  "matches": [
+   "BraTS2021_01142"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_065": {
+  "matches": [
+   "BraTS2021_01441"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_066": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_067": {
+  "matches": [
+   "BraTS2021_01448"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_068": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_069": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_070": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_071": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_072": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_073": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_074": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_075": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_076": {
+  "matches": [
+   "BraTS2021_01494"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_077": {
+  "matches": [
+   "BraTS2021_01480"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_078": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_079": {
+  "matches": [
+   "BraTS2021_01450"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_080": {
+  "matches": [
+   "BraTS2021_00999"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_081": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_082": {
+  "matches": [
+   "BraTS2021_00124"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_083": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_084": {
+  "matches": [
+   "BraTS2021_00149"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_085": {
+  "matches": [
+   "BraTS2021_00110"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_086": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_087": {
+  "matches": [
+   "BraTS2021_00831"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_088": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_089": {
+  "matches": [
+   "BraTS2021_01465"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_090": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_091": {
+  "matches": [
+   "BraTS2021_01281"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_092": {
+  "matches": [
+   "BraTS2021_01512"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_093": {
+  "matches": [
+   "BraTS2021_00151"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_094": {
+  "matches": [
+   "BraTS2021_01143"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_095": {
+  "matches": [
+   "BraTS2021_01452"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_096": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_097": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_098": {
+  "matches": [
+   "BraTS2021_00107"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_099": {
+  "matches": [
+   "BraTS2021_01291"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_100": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_101": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_102": {
+  "matches": [
+   "BraTS2021_01300"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_103": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_104": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_105": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_106": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_107": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_108": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_109": {
+  "matches": [
+   "BraTS2021_00100"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_110": {
+  "matches": [
+   "BraTS2021_01144"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_111": {
+  "matches": [
+   "BraTS2021_01289"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_112": {
+  "matches": [
+   "BraTS2021_01501"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_113": {
+  "matches": [
+   "BraTS2021_01141"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_114": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_115": {
+  "matches": [
+   "BraTS2021_01527"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_116": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_117": {
+  "matches": [
+   "BraTS2021_01478"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_118": {
+  "matches": [
+   "BraTS2021_01462"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_119": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_120": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_121": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_122": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_123": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_124": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_125": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_126": {
+  "matches": [
+   "BraTS2021_01513"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_127": {
+  "matches": [
+   "BraTS2021_01458"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_128": {
+  "matches": [
+   "BraTS2021_01491"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_129": {
+  "matches": [
+   "BraTS2021_01455"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_130": {
+  "matches": [
+   "BraTS2021_01503"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_131": {
+  "matches": [
+   "BraTS2021_00116"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_132": {
+  "matches": [
+   "BraTS2021_01474"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_133": {
+  "matches": [
+   "BraTS2021_00148"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_134": {
+  "matches": [
+   "BraTS2021_00148"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_135": {
+  "matches": [
+   "BraTS2021_01506"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_136": {
+  "matches": [
+   "BraTS2021_01297"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_137": {
+  "matches": [
+   "BraTS2021_01296"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_138": {
+  "matches": [
+   "BraTS2021_01296"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_139": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_140": {
+  "matches": [
+   "BraTS2021_01296"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_141": {
+  "matches": [
+   "BraTS2021_01296"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_142": {
+  "matches": [
+   "BraTS2021_01463"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_143": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_144": {
+  "matches": [
+   "BraTS2021_01488"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_145": {
+  "matches": [
+   "BraTS2021_01442"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_146": {
+  "matches": [
+   "BraTS2021_01499"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_147": {
+  "matches": [
+   "BraTS2021_01454"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_148": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_149": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_150": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_151": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_152": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_153": {
+  "matches": [
+   "BraTS2021_01481"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_154": {
+  "matches": [
+   "BraTS2021_00142"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_155": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_156": {
+  "matches": [
+   "BraTS2021_00142"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_157": {
+  "matches": [
+   "BraTS2021_00142"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_158": {
+  "matches": [
+   "BraTS2021_00122"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_159": {
+  "matches": [
+   "BraTS2021_00132"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_160": {
+  "matches": [
+   "BraTS2021_01451"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_161": {
+  "matches": [
+   "BraTS2021_01510"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_162": {
+  "matches": [
+   "BraTS2021_00112"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_163": {
+  "matches": [
+   "BraTS2021_01497"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_164": {
+  "matches": [
+   "BraTS2021_00121"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_165": {
+  "matches": [
+   "BraTS2021_00138"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_166": {
+  "matches": [
+   "BraTS2021_01292"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_167": {
+  "matches": [
+   "BraTS2021_01459"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_168": {
+  "matches": [
+   "BraTS2021_01469"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_169": {
+  "matches": [
+   "BraTS2021_01504"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_170": {
+  "matches": [
+   "BraTS2021_01511"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_171": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_172": {
+  "matches": [
+   "BraTS2021_00128"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_173": {
+  "matches": [
+   "BraTS2021_00147"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_174": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_175": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_176": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_177": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_178": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_179": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_180": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_181": {
+  "matches": [
+   "BraTS2021_00106"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_182": {
+  "matches": [
+   "BraTS2021_01445"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_183": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_184": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_185": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_186": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_187": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_188": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_189": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_190": {
+  "matches": [
+   "BraTS2021_01457"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_191": {
+  "matches": [
+   "BraTS2021_00137"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_192": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_193": {
+  "matches": [
+   "BraTS2021_01282"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_194": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_195": {
+  "matches": [
+   "BraTS2021_00109"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_196": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_197": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_198": {
+  "matches": [
+   "BraTS2021_01489"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_199": {
+  "matches": [
+   "BraTS2021_01443"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_200": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_201": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_202": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_203": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_204": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_205": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_206": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_207": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_208": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_209": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_210": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_211": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_212": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_213": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_214": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_215": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_216": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_217": {
+  "matches": [
+   "BraTS2021_00123"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_218": {
+  "matches": [
+   "BraTS2021_01484"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_219": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_220": {
+  "matches": [
+   "BraTS2021_00108"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_221": {
+  "matches": [
+   "BraTS2021_01493"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_222": {
+  "matches": [
+   "BraTS2021_00117"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_223": {
+  "matches": [
+   "BraTS2021_01498"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_224": {
+  "matches": [
+   "BraTS2021_00102"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_225": {
+  "matches": [
+   "BraTS2021_01284"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_226": {
+  "matches": [
+   "BraTS2021_01502"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_227": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_228": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_229": {
+  "matches": [
+   "BraTS2021_01466"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_230": {
+  "matches": [
+   "BraTS2021_01508"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_231": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_232": {
+  "matches": [
+   "BraTS2021_00113"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_233": {
+  "matches": [
+   "BraTS2021_01485"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_234": {
+  "matches": [
+   "BraTS2021_01005"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_235": {
+  "matches": [
+   "BraTS2021_00120"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_236": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_237": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_238": {
+  "matches": [
+   "BraTS2021_00140"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_239": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_240": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_241": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_242": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_243": {
+  "matches": [
+   "BraTS2021_01507"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_244": {
+  "matches": [
+   "BraTS2021_00134"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_245": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_246": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_247": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_248": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_249": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_250": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_251": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_252": {
+  "matches": [
+   "BraTS2021_00139"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_253": {
+  "matches": [
+   "BraTS2021_01492"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_254": {
+  "matches": [
+   "BraTS2021_01476"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_255": {
+  "matches": [
+   "BraTS2021_01298"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_256": {
+  "matches": [
+   "BraTS2021_01003"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_257": {
+  "matches": [
+   "BraTS2021_01486"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_258": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_259": {
+  "matches": [
+   "BraTS2021_01526"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_260": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_261": {
+  "matches": [
+   "BraTS2021_01475"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_262": {
+  "matches": [
+   "BraTS2021_01522"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_263": {
+  "matches": [
+   "BraTS2021_01444"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_264": {
+  "matches": [
+   "BraTS2021_01453"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_265": {
+  "matches": [
+   "BraTS2021_01467"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_266": {
+  "matches": [
+   "BraTS2021_01471"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_267": {
+  "matches": [
+   "BraTS2021_00104"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_268": {
+  "matches": [
+   "BraTS2021_01523"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_269": {
+  "matches": [],
+  "splits": [],
+  "label_equal": []
+ },
+ "BRATS_270": {
+  "matches": [
+   "BraTS2021_01490"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_271": {
+  "matches": [
+   "BraTS2021_00143"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_272": {
+  "matches": [
+   "BraTS2021_01483"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_273": {
+  "matches": [
+   "BraTS2021_01461"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_274": {
+  "matches": [
+   "BraTS2021_01007"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_275": {
+  "matches": [
+   "BraTS2021_01411"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_276": {
+  "matches": [
+   "BraTS2021_01428"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_277": {
+  "matches": [
+   "BraTS2021_01419"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_278": {
+  "matches": [
+   "BraTS2021_01420"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_279": {
+  "matches": [
+   "BraTS2021_01418"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_280": {
+  "matches": [
+   "BraTS2021_01425"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_281": {
+  "matches": [
+   "BraTS2021_01413"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_282": {
+  "matches": [
+   "BraTS2021_01415"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_283": {
+  "matches": [
+   "BraTS2021_01416"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_284": {
+  "matches": [
+   "BraTS2021_01414"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_285": {
+  "matches": [
+   "BraTS2021_01430"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_286": {
+  "matches": [
+   "BraTS2021_01424"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_287": {
+  "matches": [
+   "BraTS2021_01422"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_288": {
+  "matches": [
+   "BraTS2021_01423"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_289": {
+  "matches": [
+   "BraTS2021_01426"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_290": {
+  "matches": [
+   "BraTS2021_01417"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_291": {
+  "matches": [
+   "BraTS2021_01427"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_292": {
+  "matches": [
+   "BraTS2021_01429"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_293": {
+  "matches": [
+   "BraTS2021_01412"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_294": {
+  "matches": [
+   "BraTS2021_01421"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_295": {
+  "matches": [
+   "BraTS2021_01202"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_296": {
+  "matches": [
+   "BraTS2021_01203"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_297": {
+  "matches": [
+   "BraTS2021_01204"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_298": {
+  "matches": [
+   "BraTS2021_00131"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_299": {
+  "matches": [
+   "BraTS2021_01205"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_300": {
+  "matches": [
+   "BraTS2021_01206"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_301": {
+  "matches": [
+   "BraTS2021_01207"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_302": {
+  "matches": [
+   "BraTS2021_01208"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_303": {
+  "matches": [
+   "BraTS2021_01209"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_304": {
+  "matches": [
+   "BraTS2021_01210"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_305": {
+  "matches": [
+   "BraTS2021_01211"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_306": {
+  "matches": [
+   "BraTS2021_01212"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_307": {
+  "matches": [
+   "BraTS2021_01213"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_308": {
+  "matches": [
+   "BraTS2021_01214"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_309": {
+  "matches": [
+   "BraTS2021_01215"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_310": {
+  "matches": [
+   "BraTS2021_01216"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_311": {
+  "matches": [
+   "BraTS2021_01217"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_312": {
+  "matches": [
+   "BraTS2021_01218"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_313": {
+  "matches": [
+   "BraTS2021_00152"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_314": {
+  "matches": [
+   "BraTS2021_01221"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_315": {
+  "matches": [
+   "BraTS2021_01222"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_316": {
+  "matches": [
+   "BraTS2021_01223"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_317": {
+  "matches": [
+   "BraTS2021_01224"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_318": {
+  "matches": [
+   "BraTS2021_01226"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_319": {
+  "matches": [
+   "BraTS2021_01227"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_320": {
+  "matches": [
+   "BraTS2021_01228"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_321": {
+  "matches": [
+   "BraTS2021_01229"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_322": {
+  "matches": [
+   "BraTS2021_01230"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_323": {
+  "matches": [
+   "BraTS2021_01231"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_324": {
+  "matches": [
+   "BraTS2021_01232"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_325": {
+  "matches": [
+   "BraTS2021_01233"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_326": {
+  "matches": [
+   "BraTS2021_01234"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_327": {
+  "matches": [
+   "BraTS2021_01235"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_328": {
+  "matches": [
+   "BraTS2021_01236"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_329": {
+  "matches": [
+   "BraTS2021_01237"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_330": {
+  "matches": [
+   "BraTS2021_01036"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_331": {
+  "matches": [
+   "BraTS2021_00417"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_332": {
+  "matches": [
+   "BraTS2021_01238"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_333": {
+  "matches": [
+   "BraTS2021_01239"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_334": {
+  "matches": [
+   "BraTS2021_00318"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_335": {
+  "matches": [
+   "BraTS2021_00154"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_336": {
+  "matches": [
+   "BraTS2021_00230"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_337": {
+  "matches": [
+   "BraTS2021_00292"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_338": {
+  "matches": [
+   "BraTS2021_00284"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_339": {
+  "matches": [
+   "BraTS2021_00310"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_340": {
+  "matches": [
+   "BraTS2021_01240"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_341": {
+  "matches": [
+   "BraTS2021_01241"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_342": {
+  "matches": [
+   "BraTS2021_00227"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_343": {
+  "matches": [
+   "BraTS2021_00324"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_344": {
+  "matches": [
+   "BraTS2021_00391"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_345": {
+  "matches": [
+   "BraTS2021_00407"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_346": {
+  "matches": [
+   "BraTS2021_00274"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_347": {
+  "matches": [
+   "BraTS2021_00375"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_348": {
+  "matches": [
+   "BraTS2021_01242"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_349": {
+  "matches": [
+   "BraTS2021_00290"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_350": {
+  "matches": [
+   "BraTS2021_01243"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_351": {
+  "matches": [
+   "BraTS2021_01244"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_352": {
+  "matches": [
+   "BraTS2021_01245"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_353": {
+  "matches": [
+   "BraTS2021_01247"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_354": {
+  "matches": [
+   "BraTS2021_01248"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_355": {
+  "matches": [
+   "BraTS2021_01249"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_356": {
+  "matches": [
+   "BraTS2021_01251"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_357": {
+  "matches": [
+   "BraTS2021_01252"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_358": {
+  "matches": [
+   "BraTS2021_01253"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_359": {
+  "matches": [
+   "BraTS2021_01257"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_360": {
+  "matches": [
+   "BraTS2021_01258"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_361": {
+  "matches": [
+   "BraTS2021_01260"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_362": {
+  "matches": [
+   "BraTS2021_01261"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_363": {
+  "matches": [
+   "BraTS2021_01262"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_364": {
+  "matches": [
+   "BraTS2021_01263"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_365": {
+  "matches": [
+   "BraTS2021_01266"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_366": {
+  "matches": [
+   "BraTS2021_01267"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_367": {
+  "matches": [
+   "BraTS2021_01268"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_368": {
+  "matches": [
+   "BraTS2021_01269"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_369": {
+  "matches": [
+   "BraTS2021_01270"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_370": {
+  "matches": [
+   "BraTS2021_01271"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_371": {
+  "matches": [
+   "BraTS2021_01272"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_372": {
+  "matches": [
+   "BraTS2021_00320"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_373": {
+  "matches": [
+   "BraTS2021_01273"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_374": {
+  "matches": [
+   "BraTS2021_01274"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_375": {
+  "matches": [
+   "BraTS2021_01275"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_376": {
+  "matches": [
+   "BraTS2021_01276"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_377": {
+  "matches": [
+   "BraTS2021_01277"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_378": {
+  "matches": [
+   "BraTS2021_00328"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_379": {
+  "matches": [
+   "BraTS2021_00313"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_380": {
+  "matches": [
+   "BraTS2021_00321"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_381": {
+  "matches": [
+   "BraTS2021_00331"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_382": {
+  "matches": [
+   "BraTS2021_00280"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_383": {
+  "matches": [
+   "BraTS2021_01139"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_384": {
+  "matches": [
+   "BraTS2021_01470"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_385": {
+  "matches": [
+   "BraTS2021_01146"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_386": {
+  "matches": [
+   "BraTS2021_00133"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_387": {
+  "matches": [
+   "BraTS2021_01302"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_388": {
+  "matches": [
+   "BraTS2021_01456"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_389": {
+  "matches": [
+   "BraTS2021_01290"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_390": {
+  "matches": [
+   "BraTS2021_01464"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_391": {
+  "matches": [
+   "BraTS2021_01447"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_392": {
+  "matches": [
+   "BraTS2021_01460"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_393": {
+  "matches": [
+   "BraTS2021_01283"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_394": {
+  "matches": [
+   "BraTS2021_01468"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_395": {
+  "matches": [
+   "BraTS2021_01002"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_396": {
+  "matches": [
+   "BraTS2021_01303"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_397": {
+  "matches": [
+   "BraTS2021_01140"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_398": {
+  "matches": [
+   "BraTS2021_00111"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_399": {
+  "matches": [
+   "BraTS2021_01142"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_400": {
+  "matches": [
+   "BraTS2021_01441"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_401": {
+  "matches": [
+   "BraTS2021_01448"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_402": {
+  "matches": [
+   "BraTS2021_01450"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_403": {
+  "matches": [
+   "BraTS2021_00999"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_404": {
+  "matches": [
+   "BraTS2021_00124"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_405": {
+  "matches": [
+   "BraTS2021_01009"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_406": {
+  "matches": [
+   "BraTS2021_00149"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_407": {
+  "matches": [
+   "BraTS2021_00110"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_408": {
+  "matches": [
+   "BraTS2021_00831"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_409": {
+  "matches": [
+   "BraTS2021_01465"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_410": {
+  "matches": [
+   "BraTS2021_01281"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_411": {
+  "matches": [
+   "BraTS2021_00151"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_412": {
+  "matches": [
+   "BraTS2021_01143"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_413": {
+  "matches": [
+   "BraTS2021_01452"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_414": {
+  "matches": [
+   "BraTS2021_01473"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_415": {
+  "matches": [
+   "BraTS2021_00107"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_416": {
+  "matches": [
+   "BraTS2021_01291"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_417": {
+  "matches": [
+   "BraTS2021_00105"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_418": {
+  "matches": [
+   "BraTS2021_01300"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_419": {
+  "matches": [
+   "BraTS2021_00100"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_420": {
+  "matches": [
+   "BraTS2021_01144"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_421": {
+  "matches": [
+   "BraTS2021_01289"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_422": {
+  "matches": [
+   "BraTS2021_01141"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_423": {
+  "matches": [
+   "BraTS2021_01472"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_424": {
+  "matches": [
+   "BraTS2021_01462"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_425": {
+  "matches": [
+   "BraTS2021_01458"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_426": {
+  "matches": [
+   "BraTS2021_01455"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_427": {
+  "matches": [
+   "BraTS2021_00116"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_428": {
+  "matches": [
+   "BraTS2021_01474"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_429": {
+  "matches": [
+   "BraTS2021_00148"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_430": {
+  "matches": [
+   "BraTS2021_01297"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_431": {
+  "matches": [
+   "BraTS2021_01296"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_432": {
+  "matches": [
+   "BraTS2021_01463"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_433": {
+  "matches": [
+   "BraTS2021_01442"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_434": {
+  "matches": [
+   "BraTS2021_01454"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_435": {
+  "matches": [
+   "BraTS2021_00142"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_436": {
+  "matches": [
+   "BraTS2021_00122"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_437": {
+  "matches": [
+   "BraTS2021_00132"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_438": {
+  "matches": [
+   "BraTS2021_01451"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_439": {
+  "matches": [
+   "BraTS2021_00112"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_440": {
+  "matches": [
+   "BraTS2021_00121"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_441": {
+  "matches": [
+   "BraTS2021_00138"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_442": {
+  "matches": [
+   "BraTS2021_01292"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_443": {
+  "matches": [
+   "BraTS2021_01459"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_444": {
+  "matches": [
+   "BraTS2021_01469"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   false
+  ]
+ },
+ "BRATS_445": {
+  "matches": [
+   "BraTS2021_00128"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_446": {
+  "matches": [
+   "BraTS2021_00147"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_447": {
+  "matches": [
+   "BraTS2021_01446"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_448": {
+  "matches": [
+   "BraTS2021_00106"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_449": {
+  "matches": [
+   "BraTS2021_01445"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_450": {
+  "matches": [
+   "BraTS2021_01457"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_451": {
+  "matches": [
+   "BraTS2021_00137"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_452": {
+  "matches": [
+   "BraTS2021_01282"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_453": {
+  "matches": [
+   "BraTS2021_00109"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_454": {
+  "matches": [
+   "BraTS2021_01443"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_455": {
+  "matches": [
+   "BraTS2021_00150"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_456": {
+  "matches": [
+   "BraTS2021_00123"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_457": {
+  "matches": [
+   "BraTS2021_00108"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_458": {
+  "matches": [
+   "BraTS2021_00117"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_459": {
+  "matches": [
+   "BraTS2021_00102"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_460": {
+  "matches": [
+   "BraTS2021_01284"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_461": {
+  "matches": [
+   "BraTS2021_01466"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_462": {
+  "matches": [
+   "BraTS2021_00113"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_463": {
+  "matches": [
+   "BraTS2021_01005"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_464": {
+  "matches": [
+   "BraTS2021_00120"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_465": {
+  "matches": [
+   "BraTS2021_01145"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_466": {
+  "matches": [
+   "BraTS2021_00140"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_467": {
+  "matches": [
+   "BraTS2021_00134"
+  ],
+  "splits": [
+   "test"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_468": {
+  "matches": [
+   "BraTS2021_00139"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_469": {
+  "matches": [
+   "BraTS2021_01298"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_470": {
+  "matches": [
+   "BraTS2021_01003"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_471": {
+  "matches": [
+   "BraTS2021_01475"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_472": {
+  "matches": [
+   "BraTS2021_01444"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_473": {
+  "matches": [
+   "BraTS2021_01453"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_474": {
+  "matches": [
+   "BraTS2021_01467"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_475": {
+  "matches": [
+   "BraTS2021_01471"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_476": {
+  "matches": [
+   "BraTS2021_00104"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_477": {
+  "matches": [
+   "BraTS2021_00143"
+  ],
+  "splits": [
+   "val"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_478": {
+  "matches": [
+   "BraTS2021_01461"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_479": {
+  "matches": [
+   "BraTS2021_01007"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_480": {
+  "matches": [
+   "BraTS2021_00130"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_481": {
+  "matches": [
+   "BraTS2021_00136"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_482": {
+  "matches": [
+   "BraTS2021_00146"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_483": {
+  "matches": [
+   "BraTS2021_00144"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ },
+ "BRATS_484": {
+  "matches": [
+   "BraTS2021_01449"
+  ],
+  "splits": [
+   "train"
+  ],
+  "label_equal": [
+   true
+  ]
+ }
+}
