@@ -27,3 +27,21 @@ __pycache__/
 
 # Generated experiment logs
 /logs_2017/
+
+# data, models, logs (large)
+data/
+checkpoints*/
+logs/
+*.npy
+*.pt
+*.tgz
+*.zip
+*.tar
+# backups and clutter
+*.bak
+*.log
+nohup.out
+__pycache__/
+.ipynb_checkpoints/
+official_segformer3d/
+prep*.log
