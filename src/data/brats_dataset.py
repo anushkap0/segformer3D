@@ -87,6 +87,7 @@ class BraTSDataset(Dataset):
     def _random_crop(self, image: np.ndarray, label: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
         _, d, h, w = image.shape
         pd, ph, pw = self.patch_size
+        full_pd, full_ph, full_pw = pd, ph, pw
         pd, ph, pw = min(pd, d), min(ph, h), min(pw, w)
 
         # oversample foreground: 70% of crops centered near a nonzero label voxel
@@ -106,7 +107,7 @@ class BraTSDataset(Dataset):
         label_crop = label[z0:z0 + pd, y0:y0 + ph, x0:x0 + pw]
 
         # pad if the volume was smaller than patch_size along any axis
-        pad_d, pad_h, pad_w = pd - image_crop.shape[1], ph - image_crop.shape[2], pw - image_crop.shape[3]
+        pad_d, pad_h, pad_w = full_pd - image_crop.shape[1], full_ph - image_crop.shape[2], full_pw - image_crop.shape[3]
         if pad_d > 0 or pad_h > 0 or pad_w > 0:
             image_crop = np.pad(image_crop, ((0, 0), (0, pad_d), (0, pad_h), (0, pad_w)))
             label_crop = np.pad(label_crop, ((0, pad_d), (0, pad_h), (0, pad_w)))

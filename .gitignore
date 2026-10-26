@@ -7,3 +7,23 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+# Experiment logs and temporary files
+*.log
+*.bak
+*.tmp
+*.tgz
+*.tar
+*.sha256
+.ext_raw_path
+missing_repro.json
+configs_backup_*/
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Generated experiment logs
+/logs_2017/

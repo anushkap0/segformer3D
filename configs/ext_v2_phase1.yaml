@@ -1,0 +1,79 @@
+experiment_name: v2_phase1_baseline
+phase: 1
+model:
+  type: segformer3d_official
+  official_repo_dir: /workspace/official_src_clone
+  in_channels: 4
+  num_classes: 3
+  embed_dims:
+  - 32
+  - 64
+  - 160
+  - 256
+  num_heads:
+  - 1
+  - 2
+  - 5
+  - 8
+  sr_ratios:
+  - 4
+  - 2
+  - 1
+  - 1
+  depths:
+  - 2
+  - 2
+  - 2
+  - 2
+  mlp_ratios:
+  - 4
+  - 4
+  - 4
+  - 4
+  patch_kernel_size:
+  - 7
+  - 3
+  - 3
+  - 3
+  patch_stride:
+  - 4
+  - 2
+  - 2
+  - 2
+  patch_padding:
+  - 3
+  - 1
+  - 1
+  - 1
+  decoder_head_embedding_dim: 256
+  decoder_dropout: 0.0
+data:
+  data_dir: data/processed/BraTS2017ext
+  manifest: data/processed/BraTS2017ext/split_manifest.json
+  patch_size:
+  - 128
+  - 128
+  - 128
+  mutually_exclusive: false
+train:
+  batch_size: 4
+  num_workers: 4
+  epochs: 200
+  optimizer: adamw
+  lr: 0.0003
+  weight_decay: 1.0e-05
+  lr_schedule: cosine
+  warmup_epochs: 10
+  loss:
+    type: dice_bce
+    dice_weight: 1.0
+    bce_weight: 1.0
+  val_interval: 5
+  amp: true
+  grad_clip_norm: 1.0
+  checkpoint_dir: checkpoints/v2_phase1
+  log_dir: logs/v2_phase1
+eval:
+  sliding_window: true
+  sw_overlap: 0.5
+  threshold: 0.5

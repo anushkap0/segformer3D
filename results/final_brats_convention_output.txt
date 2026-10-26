@@ -1,0 +1,57 @@
+=== BRATS EMPTY-LABEL CONVENTION (penalty 373.13) ===
+  test           baseline   {'AMBIGUOUS': 1, 'both empty': 3}
+  test           continued  {'AMBIGUOUS': 1, 'both empty': 3}
+  test           noloss     {'AMBIGUOUS': 1, 'both empty': 3}
+  test           noloss_s2  {'AMBIGUOUS': 2, 'both empty': 2}
+  test           full       {'AMBIGUOUS': 1, 'both empty': 3}
+  test           full_s2    {'both empty': 4}
+  test           unet       {'AMBIGUOUS': 3, 'both empty': 1}
+  WARNING: 9 ambiguous cases in results/final/ambiguous_test.csv (paste the first lines)
+  exclusion sensitivity set: 122 of 126 cases
+  test           baseline      brats      0.9347 0.9052 0.8521 0.8973 3.5696 3.1480 2.8926
+  test           baseline      exclusion  0.9347 0.9052 0.8454 0.8951 3.5732 3.0454 2.9637
+  test           continued     brats      0.9362 0.9074 0.8539 0.8992 3.2490 3.0705 3.3596
+  test           continued     exclusion  0.9362 0.9074 0.8472 0.8969 3.2454 2.9746 3.4422
+  test           noloss        brats      0.9390 0.9097 0.8580 0.9022 3.4212 3.5523 3.4723
+  test           noloss        exclusion  0.9390 0.9097 0.8512 0.9000 3.4272 3.4575 3.5577
+  test           noloss_s2     brats      0.9396 0.9107 0.8592 0.9032 3.2027 3.0548 2.9270
+  test           noloss_s2     exclusion  0.9396 0.9107 0.8456 0.8986 3.1978 2.9544 2.9750
+  test           full          brats      0.9394 0.9107 0.8562 0.9021 3.2066 3.0247 2.8807
+  test           full          exclusion  0.9394 0.9107 0.8494 0.8999 3.2023 2.9275 2.9516
+  test           full_s2       brats      0.9397 0.9091 0.8582 0.9023 3.1679 3.0529 2.9630
+  test           full_s2       exclusion  0.9397 0.9091 0.8582 0.9023 3.1687 2.9516 3.0601
+  test           unet          brats      0.9399 0.9167 0.8966 0.9178 3.7735 3.0384 2.5250
+  test           unet          exclusion  0.9399 0.9167 0.8753 0.9106 3.7630 2.9048 2.5457
+  test           noloss_mean2  brats      0.9393 0.9102 0.8586 0.9027 3.3120 3.3036 3.1996
+  test           full_mean2    brats      0.9395 0.9099 0.8572 0.9022 3.1873 3.0388 2.9219
+  test           noloss_mean2  exclusion  0.9393 0.9102 0.8484 0.8993 3.3125 3.2059 3.2663
+  test           full_mean2    exclusion  0.9395 0.9099 0.8538 0.9011 3.1855 2.9395 3.0058
+  external_flip  baseline   {'both empty': 8, 'AMBIGUOUS': 4, 'GT present, prediction empty': 21}
+  external_flip  continued  {'both empty': 9, 'AMBIGUOUS': 3, 'GT present, prediction empty': 22}
+  external_flip  noloss     {'both empty': 9, 'AMBIGUOUS': 3, 'GT present, prediction empty': 21}
+  external_flip  noloss_s2  {'both empty': 9, 'AMBIGUOUS': 3, 'GT present, prediction empty': 23}
+  external_flip  full       {'both empty': 9, 'AMBIGUOUS': 3, 'GT present, prediction empty': 21}
+  external_flip  full_s2    {'both empty': 9, 'AMBIGUOUS': 3, 'GT present, prediction empty': 23}
+  external_flip  unet       {'AMBIGUOUS': 7, 'both empty': 5, 'GT present, prediction empty': 10}
+  WARNING: 26 ambiguous cases in results/final/ambiguous_external_flip.csv (paste the first lines)
+  exclusion sensitivity set: 452 of 484 cases
+  external_flip  baseline      brats      0.8929 0.8058 0.7559 0.8182 6.5003 9.4215 19.0827
+  external_flip  baseline      exclusion  0.8929 0.8058 0.7497 0.8161 6.1917 6.9289 5.2868
+  external_flip  continued     brats      0.8939 0.8113 0.7595 0.8215 6.2581 8.7594 20.5940
+  external_flip  continued     exclusion  0.8939 0.8113 0.7548 0.8200 5.8180 6.9654 5.4051
+  external_flip  noloss        brats      0.8939 0.8144 0.7645 0.8243 6.4203 9.5481 19.1512
+  external_flip  noloss        exclusion  0.8939 0.8144 0.7597 0.8227 5.8915 7.0227 5.3929
+  external_flip  noloss_s2     brats      0.8947 0.8142 0.7634 0.8241 7.1119 9.4415 19.8359
+  external_flip  noloss_s2     exclusion  0.8947 0.8142 0.7587 0.8225 5.8857 6.8905 5.3804
+  external_flip  full          brats      0.8965 0.8144 0.7615 0.8242 6.3165 8.8458 19.9507
+  external_flip  full          exclusion  0.8965 0.8144 0.7568 0.8226 5.8121 7.0133 5.5093
+  external_flip  full_s2       brats      0.8965 0.8124 0.7623 0.8237 7.0386 9.7102 19.9579
+  external_flip  full_s2       exclusion  0.8965 0.8124 0.7576 0.8222 5.8329 7.2111 5.5168
+  external_flip  unet          brats      0.8942 0.8199 0.7839 0.8327 6.4740 7.5728 11.9212
+  external_flip  unet          exclusion  0.8942 0.8199 0.7726 0.8289 6.0457 6.4823 4.2517
+  external_flip  noloss_mean2  brats      0.8943 0.8143 0.7639 0.8242 6.7661 9.4948 19.4935
+  external_flip  full_mean2    brats      0.8965 0.8134 0.7619 0.8240 6.6776 9.2780 19.9543
+  external_flip  noloss_mean2  exclusion  0.8943 0.8143 0.7592 0.8226 5.8886 6.9566 5.3867
+  external_flip  full_mean2    exclusion  0.8965 0.8134 0.7572 0.8224 5.8225 7.1122 5.5130
+
+written to results/final

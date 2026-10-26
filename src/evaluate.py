@@ -42,13 +42,18 @@ def main():
     parser.add_argument("--checkpoint", required=True)
     parser.add_argument("--split", default="test", choices=["train", "val", "test"])
     parser.add_argument("--output_json", default=None)
+    parser.add_argument("--manifest", default=None, help="override data.manifest")
+    parser.add_argument("--data_dir", default=None, help="override data.data_dir")
+    parser.add_argument("--tta", action="store_true", help="flip test-time augmentation")
     args = parser.parse_args()
 
     with open(args.config) as f:
         cfg = yaml.safe_load(f)
+    if args.manifest: cfg["data"]["manifest"] = args.manifest
+    if args.data_dir: cfg["data"]["data_dir"] = args.data_dir
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    is_boundary_model = cfg["model"]["type"] == "segformer3d_boundary"
+    is_boundary_model = cfg["model"]["type"].endswith("boundary")
     eval_output = cfg.get("eval", {}).get("eval_output", "logits")
     threshold = cfg.get("eval", {}).get("threshold", 0.5)
     mutually_exclusive = cfg["data"].get("mutually_exclusive", False)
@@ -64,13 +69,24 @@ def main():
 
     manifest = load_split_manifest(cfg["data"]["manifest"])
     case_ids = manifest[args.split]
+    assert len(case_ids) > 0, f"split {args.split!r} khaali hai - manifest/data check karo"
     data_dir = cfg["data"]["data_dir"]
 
-    def predictor(x):
+    def base_predict(x):
         outputs = model(x)
         if is_boundary_model:
             return outputs[eval_output]
         return outputs
+
+    flip_sets = [(), (2,), (3,), (4,)] if args.tta else [()]
+
+    def predictor(x):
+        acc = 0
+        for dims in flip_sets:
+            xi = torch.flip(x, dims) if dims else x
+            yi = base_predict(xi)
+            acc = acc + (torch.flip(yi, dims) if dims else yi)
+        return acc / len(flip_sets)
 
     per_case_results = []
     per_case_ids = []

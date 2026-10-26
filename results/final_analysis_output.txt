@@ -1,0 +1,102 @@
+=== PAIRED CIs ===
+Boundary no-loss (2 seeds) vs Continued              test           n=126 +0.0024 [-0.0008, +0.0044]  includes 0: yes
+  seed 1 only: no-loss vs Continued                  test           n=126 +0.0031 [+0.0020, +0.0040]  includes 0: no
+  seed 2 only: no-loss vs Continued                  test           n=126 +0.0017 [-0.0043, +0.0054]  includes 0: yes
+Boundary + loss (2 seeds) vs Continued               test           n=126 +0.0042 [+0.0020, +0.0075]  includes 0: no
+Boundary no-loss (2 seeds) vs Baseline               test           n=126 +0.0042 [+0.0007, +0.0070]  includes 0: no
+Boundary + loss vs no-loss (loss effect)             test           n=126 +0.0018 [-0.0014, +0.0062]  includes 0: yes
+U-Net vs Boundary + loss (2 seeds)                   test           n=126 +0.0096 [-0.0011, +0.0182]  includes 0: yes
+U-Net vs Boundary no-loss (2 seeds)                  test           n=126 +0.0113 [+0.0014, +0.0198]  includes 0: no
+U-Net vs Continued                                   test           n=126 +0.0137 [+0.0036, +0.0220]  includes 0: no
+U-Net vs Baseline                                    test           n=126 +0.0156 [+0.0056, +0.0239]  includes 0: no
+U-Net vs Baseline                                    external_flip  n=484 +0.0128 [+0.0083, +0.0171]  includes 0: no
+U-Net vs Continued                                   external_flip  n=484 +0.0089 [+0.0046, +0.0127]  includes 0: no
+U-Net vs Boundary no-loss (2 seeds)                  external_flip  n=484 +0.0063 [+0.0020, +0.0100]  includes 0: no
+U-Net vs Boundary + loss (2 seeds)                   external_flip  n=484 +0.0065 [+0.0024, +0.0102]  includes 0: no
+
+=== EXTERNAL GROUPS ===
+verified matches: 369 | groups: {'untrained_identical': 39, 'trained_identical': 172, 'trained_reannotated': 125, 'untrained_reannotated': 33, 'unmatched': 115} | total 484
+trained total: 297 | untrained total: 72 | label counts equal but WT Dice < 0.999: 0
+baseline  | untrained_identical n=39 0.8667 | trained_identical n=172 0.8910 | trained_reannotated n=125 0.8107 | untrained_reannotated n=33 0.8338 | unmatched n=115 0.6877
+continued | untrained_identical n=39 0.8737 | trained_identical n=172 0.9022 | trained_reannotated n=125 0.8092 | untrained_reannotated n=33 0.8366 | unmatched n=115 0.6857
+noloss    | untrained_identical n=39 0.8784 | trained_identical n=172 0.9054 | trained_reannotated n=125 0.8095 | untrained_reannotated n=33 0.8397 | unmatched n=115 0.6892
+full      | untrained_identical n=39 0.8773 | trained_identical n=172 0.9049 | trained_reannotated n=125 0.8096 | untrained_reannotated n=33 0.8386 | unmatched n=115 0.6896
+unet      | untrained_identical n=39 0.8935 | trained_identical n=172 0.9028 | trained_reannotated n=125 0.8209 | untrained_reannotated n=33 0.8431 | unmatched n=115 0.7010
+
+Memorisation comparisons (unpaired bootstrap, difference of means)
+baseline  trained_identical vs matched-untrained (all)     172 vs 72  +0.0394 [+0.0114, +0.0701]
+baseline  trained_reannotated vs matched-untrained (all)   125 vs 72  -0.0409 [-0.0795, -0.0015]
+baseline  trained_identical vs untrained_identical         172 vs 39  +0.0243 [-0.0045, +0.0623]
+baseline  trained_reannotated vs untrained_reannotated     125 vs 33  -0.0231 [-0.0747, +0.0357]
+continued trained_identical vs matched-untrained (all)     172 vs 72  +0.0455 [+0.0196, +0.0745]
+continued trained_reannotated vs matched-untrained (all)   125 vs 72  -0.0475 [-0.0852, -0.0094]
+continued trained_identical vs untrained_identical         172 vs 39  +0.0285 [+0.0053, +0.0566]
+continued trained_reannotated vs untrained_reannotated     125 vs 33  -0.0274 [-0.0797, +0.0333]
+noloss    trained_identical vs matched-untrained (all)     172 vs 72  +0.0447 [+0.0201, +0.0720]
+noloss    trained_reannotated vs matched-untrained (all)   125 vs 72  -0.0511 [-0.0880, -0.0140]
+noloss    trained_identical vs untrained_identical         172 vs 39  +0.0270 [+0.0054, +0.0528]
+noloss    trained_reannotated vs untrained_reannotated     125 vs 33  -0.0301 [-0.0810, +0.0277]
+full      trained_identical vs matched-untrained (all)     172 vs 72  +0.0453 [+0.0201, +0.0731]
+full      trained_reannotated vs matched-untrained (all)   125 vs 72  -0.0500 [-0.0876, -0.0125]
+full      trained_identical vs untrained_identical         172 vs 39  +0.0276 [+0.0050, +0.0556]
+full      trained_reannotated vs untrained_reannotated     125 vs 33  -0.0290 [-0.0807, +0.0299]
+unet      trained_identical vs matched-untrained (all)     172 vs 72  +0.0324 [+0.0079, +0.0600]
+unet      trained_reannotated vs matched-untrained (all)   125 vs 72  -0.0495 [-0.0854, -0.0129]
+unet      trained_identical vs untrained_identical         172 vs 39  +0.0093 [-0.0102, +0.0304]
+unet      trained_reannotated vs untrained_reannotated     125 vs 33  -0.0223 [-0.0725, +0.0350]
+
+=== BRATS EMPTY-LABEL CONVENTION (penalty 373.13) ===
+  test           baseline   {'GT empty, prediction present': 1, 'both empty': 3}
+  test           continued  {'GT empty, prediction present': 1, 'both empty': 3}
+  test           noloss     {'GT empty, prediction present': 1, 'both empty': 3}
+  test           noloss_s2  {'GT empty, prediction present': 2, 'both empty': 2}
+  test           full       {'GT empty, prediction present': 1, 'both empty': 3}
+  test           full_s2    {'both empty': 4}
+  test           unet       {'GT empty, prediction present': 3, 'both empty': 1}
+  exclusion sensitivity set: 122 of 126 cases
+  test           baseline      brats      0.9347 0.9052 0.8454 0.8951 3.5696 3.1480 5.8310
+  test           baseline      exclusion  0.9347 0.9052 0.8454 0.8951 3.5732 3.0454 2.9637
+  test           continued     brats      0.9362 0.9074 0.8472 0.8969 3.2490 3.0705 6.2943
+  test           continued     exclusion  0.9362 0.9074 0.8472 0.8969 3.2454 2.9746 3.4422
+  test           noloss        brats      0.9390 0.9097 0.8512 0.9000 3.4212 3.5523 6.4061
+  test           noloss        exclusion  0.9390 0.9097 0.8512 0.9000 3.4272 3.4575 3.5577
+  test           noloss_s2     brats      0.9396 0.9107 0.8456 0.8986 3.2027 3.0548 8.8032
+  test           noloss_s2     exclusion  0.9396 0.9107 0.8456 0.8986 3.1978 2.9544 2.9750
+  test           full          brats      0.9394 0.9107 0.8494 0.8999 3.2066 3.0247 5.8192
+  test           full          exclusion  0.9394 0.9107 0.8494 0.8999 3.2023 2.9275 2.9516
+  test           full_s2       brats      0.9397 0.9091 0.8582 0.9023 3.1679 3.0529 2.9630
+  test           full_s2       exclusion  0.9397 0.9091 0.8582 0.9023 3.1687 2.9516 3.0601
+  test           unet          brats      0.9399 0.9167 0.8753 0.9106 3.7735 3.0384 11.3490
+  test           unet          exclusion  0.9399 0.9167 0.8753 0.9106 3.7630 2.9048 2.5457
+  test           noloss_mean2  brats      0.9393 0.9102 0.8484 0.8993 3.3120 3.3036 7.6046
+  test           full_mean2    brats      0.9395 0.9099 0.8538 0.9011 3.1873 3.0388 4.3911
+  test           noloss_mean2  exclusion  0.9393 0.9102 0.8484 0.8993 3.3125 3.2059 3.2663
+  test           full_mean2    exclusion  0.9395 0.9099 0.8538 0.9011 3.1855 2.9395 3.0058
+  external_flip  baseline   {'both empty': 8, 'GT empty, prediction present': 4, 'GT present, prediction empty': 21}
+  external_flip  continued  {'both empty': 9, 'GT empty, prediction present': 3, 'GT present, prediction empty': 22}
+  external_flip  noloss     {'both empty': 9, 'GT empty, prediction present': 3, 'GT present, prediction empty': 21}
+  external_flip  noloss_s2  {'both empty': 9, 'GT empty, prediction present': 3, 'GT present, prediction empty': 23}
+  external_flip  full       {'both empty': 9, 'GT empty, prediction present': 3, 'GT present, prediction empty': 21}
+  external_flip  full_s2    {'both empty': 9, 'GT empty, prediction present': 3, 'GT present, prediction empty': 23}
+  external_flip  unet       {'GT empty, prediction present': 7, 'both empty': 5, 'GT present, prediction empty': 10}
+  exclusion sensitivity set: 452 of 484 cases
+  external_flip  baseline      brats      0.8929 0.8058 0.7497 0.8161 6.5003 9.4215 22.0087
+  external_flip  baseline      exclusion  0.8929 0.8058 0.7497 0.8161 6.1917 6.9289 5.2868
+  external_flip  continued     brats      0.8939 0.8113 0.7548 0.8200 6.2581 8.7594 22.7791
+  external_flip  continued     exclusion  0.8939 0.8113 0.7548 0.8200 5.8180 6.9654 5.4051
+  external_flip  noloss        brats      0.8939 0.8144 0.7597 0.8227 6.4203 9.5481 21.3453
+  external_flip  noloss        exclusion  0.8939 0.8144 0.7597 0.8227 5.8915 7.0227 5.3929
+  external_flip  noloss_s2     brats      0.8947 0.8142 0.7587 0.8225 7.1119 9.4415 22.0257
+  external_flip  noloss_s2     exclusion  0.8947 0.8142 0.7587 0.8225 5.8857 6.8905 5.3804
+  external_flip  full          brats      0.8965 0.8144 0.7568 0.8226 6.3165 8.8458 22.1398
+  external_flip  full          exclusion  0.8965 0.8144 0.7568 0.8226 5.8121 7.0133 5.5093
+  external_flip  full_s2       brats      0.8965 0.8124 0.7576 0.8222 7.0386 9.7102 22.1469
+  external_flip  full_s2       exclusion  0.8965 0.8124 0.7576 0.8222 5.8329 7.2111 5.5168
+  external_flip  unet          brats      0.8942 0.8199 0.7726 0.8289 6.4740 7.5728 17.1453
+  external_flip  unet          exclusion  0.8942 0.8199 0.7726 0.8289 6.0457 6.4823 4.2517
+  external_flip  noloss_mean2  brats      0.8943 0.8143 0.7592 0.8226 6.7661 9.4948 21.6855
+  external_flip  full_mean2    brats      0.8965 0.8134 0.7572 0.8224 6.6776 9.2780 22.1434
+  external_flip  noloss_mean2  exclusion  0.8943 0.8143 0.7592 0.8226 5.8886 6.9566 5.3867
+  external_flip  full_mean2    exclusion  0.8965 0.8134 0.7572 0.8224 5.8225 7.1122 5.5130
+
+written to results/final
