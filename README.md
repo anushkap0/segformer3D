@@ -1,196 +1,151 @@
-# SegFormer3D: 3D Brain Tumor Segmentation
+# Boundary-Refined SegFormer3D for Brain Tumour Segmentation
 
-A research project exploring transformer-based 3D medical image segmentation, boundary-aware training objectives, computational efficiency, and generalization to external datasets.
+A controlled evaluation of a lightweight 3D transformer (SegFormer3D, Perera et al., CVPR-W 2024, [arXiv:2404.10156](https://arxiv.org/abs/2404.10156)) with and without a boundary-refinement branch, compared with a 3D U-Net, on BraTS 2021 and on an external set (Medical Segmentation Decathlon Task01) whose overlap with BraTS 2021 was audited case by case.
 
-## Overview
+This repository contains the training and evaluation code, all configurations, the analysis scripts, and the small result files (per-case metrics, tables and figures) behind the manuscript. Data, trained checkpoints and training logs are **not** included.
 
-This project investigates 3D brain tumor segmentation using a SegFormer3D-style architecture. The experiments compare baseline segmentation, boundary-aware training, ablations, continued training, and a 3D U-Net reference model.
+## Main findings
 
-The research focuses on three questions:
+All numbers come from the frozen analysis in `results/` (paired bootstrap 95% CIs over cases, 10,000 resamples). Boundary models are the mean of two Phase 2 seeds.
 
-- Does boundary-aware training improve tumor segmentation?
-- How do segmentation performance and computational cost compare across models?
-- How well do trained models generalize to external data, and how can dataset overlap affect the interpretation of results?
+| Model | Params (M) | GMACs | Test mean Dice (126 cases) |
+|---|---|---|---|
+| Baseline (SegFormer3D) | 4.53 | 15.5 | 0.8951 |
+| Continued (extra-training control) | 4.53 | 15.5 | 0.8969 |
+| Boundary, no loss | 5.36 | 43.0 | 0.8993 |
+| Boundary + loss | 5.36 | 43.0 | 0.9011 |
+| 3D U-Net | 22.58 | 481.2 | 0.9106 |
 
-**Project status:** Experimental implementation and evaluation analysis completed for the reported runs. Results should be interpreted in the context of the dataset, split, and evaluation protocol used.
+- The full boundary model beats its extra-training control (Continued) by +0.0042 mean Dice (95% CI +0.0020 to +0.0075).
+- The boundary branch alone (+0.0024, CI −0.0008 to +0.0044) and the boundary loss alone (+0.0018, CI −0.0014 to +0.0062) have no detectable effect on the mean. Per case, the branch gives a small consistent shift (median +0.0028; surface Dice +0.0048, CI +0.0010 to +0.0077); the loss gives none.
+- The 3D U-Net has the highest accuracy at 11–31× the GMACs. On the 187 external cases unseen in training it leads every transformer variant by +0.011 to +0.015 Dice, with every CI excluding zero. The lead is unchanged after removing 12 uncertain matches and the matches from the BraTS 2021 validation split.
+- A reproduction of SegFormer3D on BraTS 2017 with the authors' preprocessing, split and recipe gives a mean Dice of 0.827–0.831 against the published 0.821.
 
-## Research Objectives
+Full tables are in `results/final/` and in the manuscript.
 
-1. Evaluate 3D brain tumor segmentation using multimodal MRI.
-2. Compare baseline and boundary-aware training experiments.
-3. Investigate the effect of removing the boundary-related loss.
-4. Compare segmentation quality with computational efficiency.
-5. Analyze external-dataset performance and possible overlap with training data.
-6. Report limitations and controlled negative results transparently.
+## Repository layout
 
-## Key Experiments
-
-| Experiment | Purpose |
-|---|---|
-| Baseline | Reference SegFormer3D-style model |
-| Continued training | Evaluate additional training from an existing baseline checkpoint |
-| Boundary-aware, Seed 1 | Evaluate the boundary-aware architecture and training setup |
-| Boundary-aware, Seed 2 | Examine variation across a second seed |
-| No-boundary-loss, Seed 1 | Ablation to investigate the contribution of boundary loss |
-| No-boundary-loss, Seed 2 | Replicate the ablation with a second seed |
-| 3D U-Net | Convolutional reference model for comparison |
-
-The precise architecture, configuration, dataset split, and checkpoint associated with each result should be taken from the corresponding configuration and experiment log.
-
-## Reported Test Results
-
-The following values are from the recorded test results for the SegFormer3D experiments.
-
-| Model / experiment | Mean Dice | WT Dice | TC Dice | ET Dice |
-|---|---:|---:|---:|---:|
-| Baseline | 0.8951 | 0.9347 | 0.9052 | 0.8454 |
-| Continued training | 0.8969 | 0.9362 | 0.9074 | 0.8472 |
-| Boundary-aware, Seed 1 | 0.8999 | 0.9394 | 0.9107 | 0.8494 |
-| Boundary-aware, Seed 2 | 0.9023 | 0.9397 | 0.9091 | 0.8582 |
-| No-boundary-loss, Seed 1 | 0.9000 | 0.9390 | 0.9097 | 0.8512 |
-
-**Metric definitions**
-
-- **Mean Dice:** Average Dice score across the evaluated tumor regions, according to the evaluation script.
-- **WT:** Whole Tumor.
-- **TC:** Tumor Core.
-- **ET:** Enhancing Tumor.
-
-Dice scores range from 0 to 1, with higher values indicating greater overlap between predicted and reference segmentation masks. Confirm the aggregation method and region definitions in the evaluation code before making comparisons with external publications.
-
-These are recorded experiment results, not a guarantee of performance on other datasets or hardware.
-
-## Computational Efficiency
-
-The project includes an efficiency analysis using 128 × 128 × 128 input volumes.
-
-Recorded measurements include:
-
-- Multiply-accumulate operations (GMACs).
-- Number of model parameters.
-- Inference latency.
-- Peak memory usage.
-- Dice score versus computational cost.
-
-The comparison includes transformer-based experiments and a 3D U-Net reference model. Hardware, precision, batch size, warm-up, synchronization, and measurement procedure can affect efficiency results; consult the experiment scripts and generated reports for the exact setup.
-
-Relevant generated artifacts include:
-
-- `outputs/efficiency_summary.csv`
-- `outputs/dice_vs_gmacs.png`
-
-Use the CSV as the source of numerical efficiency measurements and the plot for visual comparison.
-
-## External Generalization and Dataset Overlap
-
-External evaluation is included to investigate generalization beyond the primary test set.
-
-The recorded overlap analysis identifies these groups:
-
-| Group | Cases |
-|---|---:|
-| Cases identified as overlapping with training data | 309 |
-| Matched cases not identified as training cases | 72 |
-| Unmatched cases | 103 |
-| Total cases analyzed | 484 |
-
-These groups reflect the recorded matching analysis and should not automatically be interpreted as independent, leakage-free evaluation groups. Matching criteria, label consistency, and case-level results must be checked before drawing conclusions.
-
-The project also includes analysis of dataset label mappings and per-case metrics. External results should be reported separately from primary test results, with attention to possible training-data overlap and differences in dataset composition.
-
-## Repository Structure
-
-The main directories used by the project include:
-
-```text
-segformer3D/
-├── configs/       # Experiment configurations
-├── scripts/       # Data preparation and analysis utilities
-├── src/           # Model and project source code
-├── figures/       # Research figures
-├── outputs/       # Generated plots and analysis artifacts
-├── results/       # Experiment result files
-└── README.md      # Project documentation
+```
+configs/      YAML experiment configs
+              v2_*.yaml            final models (Baseline, Continued, Boundary no loss / with loss, seeds 1 and 2)
+              ext_*.yaml           external-set evaluation of the same models
+              phase4_baselines.yaml / ext_unet.yaml   3D U-Net
+              repro2017*.yaml      BraTS 2017 reproduction
+              phase1_*, phase2_*, phase3_*, phase5_*  earlier development configs
+src/          train.py, evaluate.py, train_repro.py, models/, data/, losses/, utils/
+scripts/      preprocessing, evaluation drivers, overlap audit, statistics, figures
+results/      per-case JSONs (test, external_flip), tables (results/final), figures
+logs/         efficiency.json (params, GMACs, latency, memory), logs/ext/overlap.json
 ```
 
-Additional directories and files may be present. Refer to the repository for the complete implementation and experiment artifacts.
-
-## Environment and Dependencies
-
-The recorded research environment used PyTorch 2.4.0a0+f70bd71a48.nv24.06 on a GPU-enabled server.
-
-The exact CUDA version, dependency versions, and hardware configuration should be taken from the environment used for the corresponding experiment. Do not assume that the recorded environment is identical to a local workstation.
-
-## Getting Started
-
-### 1. Clone the repository
+## Setup
 
 ```bash
-git clone https://github.com/anushkap0/segformer3D.git
-cd segformer3D
+conda create -n seg3d python=3.10 -y && conda activate seg3d
+pip install -r requirements.txt        # also needs monai, nibabel, scipy, matplotlib, pyyaml
 ```
 
-### 2. Inspect experiment configurations
+Experiments were run on a single 80 GB NVIDIA GPU (DGX node), PyTorch 2.4 (NVIDIA container 24.06), with mixed precision.
 
-Review the YAML files under `configs/` to identify the model configuration, dataset paths, input dimensions, and evaluation settings.
+The `v2_*` models use the official SegFormer3D code. Clone <https://github.com/OSUPCVLab/SegFormer3D> and set `model.official_repo_dir` in the config (the configs default to `/workspace/official_src_clone`).
+
+## Data
+
+**BraTS 2021** (1,251 cases). Download from the BraTS 2021 challenge, place it under `data/raw/BraTS2021_FULL/`, then:
 
 ```bash
-find configs -maxdepth 2 -type f
+python scripts/prepare_brats.py --raw_dir data/raw/BraTS2021_FULL --out_dir data/processed/BraTS2021_FULL --legacy_names
 ```
 
-### 3. Set up the environment
+This resamples to 1 mm, z-scores each modality over the brain, crops to the non-zero region and writes `split_manifest.json` (case-level 80/10/10 split, seed 42: 1,000 / 125 / 126). Use `--legacy_names` for the `*_t1ce.nii.gz` file naming.
 
-Use the dependency instructions or environment files included in the repository, if available. Install a PyTorch build compatible with the target machine's CUDA environment when using a GPU.
+**External set** (MSD Task01 BrainTumour, 484 cases). Download from <http://medicaldecathlon.com/>, then:
 
-Do not assume that installing a different PyTorch version will reproduce the original results exactly.
+```bash
+python scripts/prepare_msd.py --raw_dir /path/to/Task01_BrainTumour --out_dir data/processed/BraTS2017ext
+```
 
-### 4. Prepare the dataset
+The MSD copy is rotated 180° in-plane relative to BraTS 2021. `scripts/flip_ext.py` writes a corrected copy (`BraTS2017ext_flip`), which is the one used for all reported external results. Labels are remapped from MSD to the internal convention (1→2, 2→1, 3→3); `scripts/fig_label_check.py` draws the check.
 
-Use the existing preparation scripts under `scripts/` and follow their documented arguments. Dataset files must be obtained from their original sources and placed in the paths expected by the selected configuration.
+## Training
 
-Medical imaging datasets may have separate access terms and usage restrictions.
+```bash
+# Phase 1: Baseline from scratch (200 epochs)
+python src/train.py --config configs/v2_phase1_baseline.yaml
 
-### 5. Evaluate an existing checkpoint
+# Phase 2: initialised from the Phase 1 checkpoint (200 epochs each)
+python src/train.py --config configs/v2_phase1_continued.yaml      # Continued
+python src/train.py --config configs/v2_abl_noloss.yaml            # Boundary, no loss (seed 1)
+python src/train.py --config configs/v2_abl_noloss_s2.yaml         # Boundary, no loss (seed 2)
+python src/train.py --config configs/v2_phase2_boundary.yaml       # Boundary + loss (seed 1)
+python src/train.py --config configs/v2_phase2_boundary_s2.yaml    # Boundary + loss (seed 2)
 
-To evaluate an existing model, locate the evaluation script and checkpoint path referenced by the experiment configuration and logs. Use the script's actual supported command-line arguments.
+# 3D U-Net from scratch
+python src/train.py --config configs/phase4_baselines.yaml
+```
 
-This repository contains experiment analysis artifacts; the availability of every dataset, checkpoint, and dependency required to reproduce each run should be verified before attempting evaluation.
+Checkpoints go to `checkpoints/<name>/best.pt` (selected on the validation split). Seed 1 runs were not seeded; seed 2 sets `train.seed: 2`. Both seeds share one Phase 1 checkpoint, so seed 2 varies only Phase 2.
 
-**Evaluation does not require retraining** when the required checkpoint and prepared dataset are already available.
+## Evaluation
 
-## Results and Reproducibility
+```bash
+# test split, plain inference (no test-time augmentation)
+python src/evaluate.py --config configs/v2_phase1_baseline.yaml \
+    --checkpoint checkpoints/v2_phase1/best.pt --split test --output_json results/test/baseline.json
 
-For reliable comparisons:
+# all models, test split and external set
+bash scripts/eval_all.sh
+bash scripts/eval_ext_flip.sh        # external set, orientation corrected
+```
 
-- Use the same evaluation split when comparing models.
-- Report the tumor regions and Dice aggregation method.
-- Include both seeds where available.
-- Report HD95 alongside Dice when computed and validated.
-- Separate primary test results from external evaluation.
-- Document dataset overlap and label-mapping checks.
-- Report inference cost with the input dimensions and measurement conditions.
-- Preserve experiment configurations and logs associated with each checkpoint.
+Inference uses sliding windows (128³, 50% overlap, Gaussian weighting). The JSONs hold per-case Dice, HD95, sensitivity, precision and surface Dice for WT, TC and ET.
+
+## Analysis
+
+```bash
+python scripts/check_overlap.py              # fingerprint match of external cases to BraTS 2021 -> logs/ext/overlap.json
+python scripts/verify_matches_flip.py        # confirm matches by FLAIR correlation after alignment
+python scripts/ext_groups_v2.py results/external_flip   # trained / matched-not-trained / unmatched groups
+python scripts/final_analysis.py             # paired CIs, groups, memorisation, HD95 with the BraTS empty-label rule
+python scripts/sensitivity_failed12.py       # zero-shot result without 12 uncertain matches
+python scripts/sensitivity_valsplit.py       # ... and without matches in the BraTS 2021 validation split
+python scripts/extra_analysis.py             # surface Dice, median differences, Wilcoxon tests, distributions
+python scripts/benchmark_models.py v2_phase1_baseline v2_phase2_boundary phase4_baselines --time   # params, GMACs, latency, memory
+python scripts/fig_dice_vs_gmacs.py          # Dice vs GMACs figure
+```
+
+HD95 follows the BraTS 2021 rule: both masks empty gives Dice 1 and HD95 0; exactly one empty gives Dice 0 and HD95 373.13 (the diagonal of a 240×240×155 volume). A version with those cases excluded is reported as a sensitivity check.
+
+## BraTS 2017 reproduction
+
+A check that the model and recipe reproduce the published SegFormer3D result. It uses the authors' preprocessing (RAS orientation, per-slice min-max scaling, fixed 128³ crop), their 411/73 split and their recipe (800 epochs, lr 1e-4, weight decay 0.01, batch size 2, cosine schedule with restarts).
+
+```bash
+# 1. run the authors' preprocessing (from https://github.com/OSUPCVLab/SegFormer3D)
+# 2. convert its output to this repo's format and use the authors' split
+python scripts/convert_authors_2017.py
+python scripts/check_repro.py
+# 3. train and compare
+python src/train_repro.py --config configs/repro2017.yaml
+python src/evaluate.py --config configs/repro2017.yaml --checkpoint checkpoints/repro2017/best.pt --split test --output_json results/repro2017_best.json
+python scripts/repro_compare.py results/repro2017_best.json
+```
+
+`src/train_repro.py` is `train.py` with a warm-restart cosine schedule added. The run differs from the authors' in input size (whole 128³ volumes, not 96³ crops), augmentation, the loss implementation and an approximated restart schedule; it validates the model and recipe, not the BraTS 2021 preprocessing.
 
 ## Limitations
 
-- Performance can vary with random seed, dataset composition, and preprocessing.
-- External dataset overlap can complicate claims about generalization.
-- Efficiency numbers depend on hardware and measurement conditions.
-- A change in Dice score alone does not establish statistical significance.
-- Results from one dataset do not establish clinical readiness.
+- Seed 1 runs were not seeded; Baseline, Continued and the U-Net are single runs; seed spread is as large as the boundary effects.
+- Confidence intervals resample cases only and are not corrected for multiple comparisons.
+- Timings come from a shared GPU.
+- Some external cases could be related scans of patients in BraTS 2021; excluding the uncertain ones did not change the conclusions.
+- No qualitative overlays of predictions are included.
 
-This project is intended for research and educational evaluation, not direct clinical diagnosis or treatment.
+## Background and references
 
-## Future Work
+The boundary branch is inspired by the boundary branch of PFF-Net (Frontiers in Computer Science, 2025) and is adapted from 2D to 3D volumes. `scripts/segdino_2p5d_adapter_notes.md` holds notes on a 2.5D SegDINO adapter, which was not used in the final experiments.
 
-Potential follow-up work includes stronger statistical analysis, additional independent external validation, systematic reproducibility checks, and further investigation of boundary-aware objectives.
-
-## Acknowledgements
-
-This work builds on research into transformer-based 3D medical image segmentation and publicly available brain tumor segmentation datasets. Please consult the relevant papers, dataset documentation, and upstream implementation licenses when using or extending this work.
-
-## License
-
-Check the repository for a `LICENSE` file before redistributing or reusing this project. No license is implied by this README.
-
-
+- Perera S, Navard P, Yilmaz A. SegFormer3D: an efficient transformer for 3D medical image segmentation. CVPR Workshops 2024. arXiv:2404.10156.
+- Baid U, et al. The RSNA-ASNR-MICCAI BraTS 2021 benchmark on brain tumor segmentation and radiogenomic classification. arXiv:2107.02314.
+- Antonelli M, et al. The Medical Segmentation Decathlon. Nat Commun 2022;13:4128.
+- Hers B, et al. SegFormer3D: improving the robustness of deep learning model-based image segmentation in ultrasound volumes of the pediatric hip. Ultrasound Med Biol 2025;51:751–8.
