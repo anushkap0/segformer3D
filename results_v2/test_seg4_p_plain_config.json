@@ -1,0 +1,18 @@
+{
+  "pred_dirs": [
+    "preds/full_s1/test",
+    "preds/full_s2/test",
+    "preds/nol_s1/test",
+    "preds/nol_s2/test"
+  ],
+  "key": "p_plain",
+  "pp": {
+    "thr_wt": 0.35,
+    "thr_tc": 0.3,
+    "thr_et": 0.3,
+    "wt_min_cc": 1000,
+    "et_min_vol": 50,
+    "hierarchy": true
+  },
+  "n": 126
+}

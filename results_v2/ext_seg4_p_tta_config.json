@@ -1,0 +1,18 @@
+{
+  "pred_dirs": [
+    "preds/full_s1/ext",
+    "preds/full_s2/ext",
+    "preds/nol_s1/ext",
+    "preds/nol_s2/ext"
+  ],
+  "key": "p_tta",
+  "pp": {
+    "thr_wt": 0.3,
+    "thr_tc": 0.4,
+    "thr_et": 0.3,
+    "wt_min_cc": 250,
+    "et_min_vol": 0,
+    "hierarchy": true
+  },
+  "n": 484
+}

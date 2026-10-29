@@ -45,3 +45,7 @@ __pycache__/
 .ipynb_checkpoints/
 official_segformer3d/
 prep*.log
+
+# Generated prediction outputs (do not commit)
+/preds/
+/preds_smoke/

@@ -1,0 +1,40 @@
+EXT zero_shot_187  full vs unet (p_plain)  metric=dice_mean  n=187
+  mean diff   = -0.0145  95% CI [-0.0208, -0.0086]  detectable
+EXT zero_shot_187  full vs unet (p_tta)  metric=dice_mean  n=187
+  mean diff   = -0.0126  95% CI [-0.0190, -0.0066]  detectable
+EXT zero_shot_187  seg4 vs unet (p_plain)  metric=dice_mean  n=187
+  mean diff   = -0.0132  95% CI [-0.0194, -0.0074]  detectable
+EXT zero_shot_187  seg4 vs unet (p_tta)  metric=dice_mean  n=187
+  mean diff   = -0.0125  95% CI [-0.0189, -0.0064]  detectable
+EXT unmatched_115  full vs unet (p_plain)  metric=dice_mean  n=115
+  mean diff   = -0.0167  95% CI [-0.0259, -0.0082]  detectable
+EXT unmatched_115  full vs unet (p_tta)  metric=dice_mean  n=115
+  mean diff   = -0.0142  95% CI [-0.0234, -0.0053]  detectable
+EXT unmatched_115  seg4 vs unet (p_plain)  metric=dice_mean  n=115
+  mean diff   = -0.0149  95% CI [-0.0239, -0.0064]  detectable
+EXT unmatched_115  seg4 vs unet (p_tta)  metric=dice_mean  n=115
+  mean diff   = -0.0141  95% CI [-0.0234, -0.0052]  detectable
+EXT held_72  full vs unet (p_plain)  metric=dice_mean  n=72
+  mean diff   = -0.0110  95% CI [-0.0171, -0.0047]  detectable
+EXT held_72  full vs unet (p_tta)  metric=dice_mean  n=72
+  mean diff   = -0.0100  95% CI [-0.0158, -0.0039]  detectable
+EXT held_72  seg4 vs unet (p_plain)  metric=dice_mean  n=72
+  mean diff   = -0.0105  95% CI [-0.0163, -0.0045]  detectable
+EXT held_72  seg4 vs unet (p_tta)  metric=dice_mean  n=72
+  mean diff   = -0.0099  95% CI [-0.0158, -0.0038]  detectable
+EXT trained_297  full vs unet (p_plain)  metric=dice_mean  n=297
+  mean diff   = -0.0025  95% CI [-0.0075, +0.0031]  not detectable
+EXT trained_297  full vs unet (p_tta)  metric=dice_mean  n=297
+  mean diff   = -0.0036  95% CI [-0.0083, +0.0013]  not detectable
+EXT trained_297  seg4 vs unet (p_plain)  metric=dice_mean  n=297
+  mean diff   = -0.0018  95% CI [-0.0068, +0.0037]  not detectable
+EXT trained_297  seg4 vs unet (p_tta)  metric=dice_mean  n=297
+  mean diff   = -0.0029  95% CI [-0.0075, +0.0020]  not detectable
+EXT zero_shot_175  full vs unet (p_plain)  metric=dice_mean  n=175
+  mean diff   = -0.0149  95% CI [-0.0209, -0.0089]  detectable
+EXT zero_shot_175  full vs unet (p_tta)  metric=dice_mean  n=175
+  mean diff   = -0.0143  95% CI [-0.0206, -0.0082]  detectable
+EXT zero_shot_175  seg4 vs unet (p_plain)  metric=dice_mean  n=175
+  mean diff   = -0.0136  95% CI [-0.0195, -0.0077]  detectable
+EXT zero_shot_175  seg4 vs unet (p_tta)  metric=dice_mean  n=175
+  mean diff   = -0.0139  95% CI [-0.0202, -0.0078]  detectable

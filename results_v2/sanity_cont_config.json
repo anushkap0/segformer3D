@@ -1,0 +1,15 @@
+{
+  "pred_dirs": [
+    "preds/cont/test"
+  ],
+  "key": "p_plain",
+  "pp": {
+    "thr_wt": 0.5,
+    "thr_tc": 0.5,
+    "thr_et": 0.5,
+    "wt_min_cc": 0,
+    "et_min_vol": 0,
+    "hierarchy": false
+  },
+  "n": 126
+}
