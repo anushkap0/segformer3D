@@ -1,85 +1,87 @@
-# SegFormer3D: Boundary-Aware 3D Medical Image Segmentation
+# SegFormer3D: Boundary-Aware Brain Tumor Segmentation and External Generalization
 
-Research repository for evaluating SegFormer3D-style transformer models against a 3D U-Net baseline for volumetric brain tumor segmentation, with a focus on computational efficiency, boundary-aware learning, and external generalization.
+[![Paper](https://img.shields.io/badge/Reference-CVPRW%202024-blue)](https://openaccess.thecvf.com/content/CVPR2024W/DEF-AI-MIA/html/Perera_SegFormer3D_An_Efficient_Transformer_for_3D_Medical_Image_Segmentation_CVPRW_2024_paper.html)
+[![Task](https://img.shields.io/badge/Task-3D%20Medical%20Segmentation-purple)](https://www.med.upenn.edu/cbica/brats2021/)
+[![Status](https://img.shields.io/badge/Status-Research%20Evaluation-orange)](#limitations)
 
-> **Research status:** Experimental evaluation and statistical analysis. The reported results do not establish non-inferiority of the transformer models to 3D U-Net at a Dice margin of 0.01.
+A research project investigating transformer-based 3D medical image segmentation, boundary-aware architectural modifications, computational efficiency, and external generalization in brain tumor segmentation.
 
-## Table of Contents
+This repository evaluates SegFormer3D-style transformer configurations against a 3D U-Net baseline using paired test-set comparisons and external dataset overlap analysis.
 
-- [Overview](#overview)
-- [Research Objectives](#research-objectives)
-- [Experimental Evaluation](#experimental-evaluation)
+**Current finding:** The evaluated transformer configurations do not establish non-inferiority to 3D U-Net at the predefined mean Dice margin of 0.01. Performance differences are more pronounced in the reported zero-shot external group than in the group identified as overlapping with training data.
+
+> This README describes experimental results supplied by the project. It is not a claim of independent reproduction of the original SegFormer3D paper.
+
+## Contents
+
+- [Background](#background)
+- [Research Questions](#research-questions)
+- [Models and Experimental Design](#models-and-experimental-design)
 - [Main Test Results](#main-test-results)
 - [External Generalization](#external-generalization)
-- [Statistical Analysis](#statistical-analysis)
-- [Inference Settings](#inference-settings)
+- [Statistical Methods](#statistical-methods)
 - [Computational Efficiency](#computational-efficiency)
+- [Datasets and Label Mapping](#datasets-and-label-mapping)
 - [Reproducibility](#reproducibility)
 - [Limitations](#limitations)
-- [Repository Structure](#repository-structure)
+- [References](#references)
 
-## Overview
+## Background
 
-Three-dimensional medical image segmentation is computationally demanding, particularly when models must preserve spatial detail and accurately delineate small or irregular anatomical structures.
+Three-dimensional medical image segmentation requires models to identify anatomical structures from volumetric imaging data. Brain tumor segmentation is particularly challenging because tumor subregions vary in size, shape, contrast, and appearance across MRI modalities.
 
-This project evaluates transformer-based volumetric segmentation against a 3D U-Net baseline. The experiments investigate:
+Convolutional neural networks, including 3D U-Net, use local spatial operations to learn hierarchical features. Transformer-based segmentation models offer an alternative approach for representing relationships across spatial locations.
 
-1. Segmentation performance on held-out test cases.
-2. The effect of boundary-aware model configurations.
-3. Generalization to external cases.
-4. Potential overlap between external evaluation cases and training data.
-5. Statistical uncertainty in model comparisons.
-6. The effect of inference settings, including test-time augmentation (TTA).
+SegFormer3D, introduced by Perera, Navard, and Yilmaz, uses a hierarchical transformer encoder and an MLP-based decoder for efficient volumetric segmentation [1].
 
-The goal is to provide a reproducible, statistically informed comparison rather than relying on Dice scores alone.
+This project investigates whether transformer-based segmentation configurations can offer a useful balance between segmentation performance, computational cost, and generalization to previously unseen external cases.
 
-## Research Objectives
+The work also examines whether apparent external performance is affected by overlap between evaluation data and the model's training data.
 
-- Evaluate transformer-based 3D segmentation models against a conventional 3D U-Net.
-- Investigate whether boundary-oriented architectural changes improve segmentation quality.
-- Assess generalization on external cases, separating previously encountered cases from zero-shot cases.
-- Compare plain inference and test-time augmentation.
-- Quantify paired performance differences and uncertainty using confidence intervals.
-- Examine whether computational savings justify any reduction in segmentation performance.
+## Research Questions
 
-## Experimental Evaluation
+1. How do the evaluated transformer configurations compare with 3D U-Net on the held-out test set?
+2. Do the transformer configurations satisfy a predefined non-inferiority margin of 0.01 mean Dice?
+3. How does performance change under test-time augmentation (TTA)?
+4. How do results differ between zero-shot external cases and cases identified as overlapping with training data?
+5. Can computational efficiency be evaluated alongside segmentation quality?
+6. How should dataset matching and overlap verification influence interpretation of external evaluation results?
 
-### Main test set
+## Models and Experimental Design
 
-The main comparison uses 126 test cases.
+The supplied result files compare the following experiment labels:
 
-The supplied statistical reports compare two transformer configurations against the 3D U-Net baseline:
+| Label | Description |
+|---|---|
+| `full` | Full transformer configuration |
+| `seg4` | Alternative transformer configuration identified by the `seg4` experiment label |
+| `unet` | 3D U-Net comparison baseline |
 
-- `full`: the full transformer configuration.
-- `seg4`: an alternative transformer configuration using four segmentation stages, as identified by the experiment labels.
-- `unet`: the 3D U-Net reference model.
+The precise architectural differences between `full` and `seg4` should be verified against the committed configuration files before publication.
 
-The exact architectural differences should be confirmed from the corresponding configuration files before interpreting `full` and `seg4` as specific architectural ablations.
+### Inference configurations
 
-### External evaluation
+- **Plain:** Standard inference.
+- **TTA:** Test-time augmentation using the transformations implemented by the evaluation pipeline.
 
-External results are divided into groups according to dataset matching and training overlap.
+The supplied main-test report specifies post-processing for both compared models.
 
-| Evaluation group | Cases | Interpretation |
-|---|---:|---|
-| Unmatched external cases | 103 | Cases without a detected dataset match |
-| Matched but not trained | 72 | Matched cases excluded from training |
-| Verified zero-shot evaluation | 175 | Combined zero-shot group in the verified report |
-| Verified unmatched group | 115 | Unmatched group in the verified report |
-| Verified held-out group | 72 | Matched cases excluded from training |
-| Verified trained-overlap group | 297 | Cases identified as overlapping with training data |
-
-The groups above come from different stages or definitions of external verification. They must not be added together as though they were mutually exclusive groups from one partition.
-
-The final manuscript should document the matching procedure, dataset identifiers, exclusions, and exact case-level membership for each group.
+A fair comparison requires consistent preprocessing, label mapping, evaluation conventions, and post-processing. The implementation details should be documented alongside the experiment configurations.
 
 ## Main Test Results
 
-The following table summarizes the supplied paired comparison statistics for mean Dice.
+The main comparison uses 126 paired test cases. The following values are transcribed from `results_v2/stats_main.txt`.
 
-**Metric:** Transformer Dice minus 3D U-Net Dice. Negative values favor 3D U-Net.
+The effect size is defined as:
 
-| Model | Inference | N | Mean difference | 95% CI |
+\[
+\Delta = \mathrm{Dice}_{\mathrm{transformer}}
+-\mathrm{Dice}_{\mathrm{U\text{-}Net}}
+\]
+
+Negative differences favor 3D U-Net.
+
+| Transformer | Inference | Cases | Mean difference | 95% CI |
 |---|---|---:|---:|---|
 | Full | Plain | 126 | -0.0109 | [-0.0196, -0.0008] |
 | Full | TTA | 126 | -0.0091 | [-0.0184, +0.0026] |
@@ -88,138 +90,192 @@ The following table summarizes the supplied paired comparison statistics for mea
 
 ### Interpretation
 
-- The full model has a negative mean Dice difference under both inference settings.
-- For full-model TTA and seg4 plain inference, the reported 95% confidence intervals include zero.
-- For full-model plain inference and seg4 TTA, the reported confidence intervals exclude zero in the negative direction.
+- All four mean differences are negative.
+- The confidence intervals for full/plain and seg4/TTA exclude zero in the negative direction.
+- The confidence intervals for full/TTA and seg4/plain include zero.
 - The reported Wilcoxon signed-rank tests indicate negative median differences for all four comparisons.
 
-A confidence interval that includes zero does not establish equivalence. Likewise, a confidence interval excluding zero does not by itself establish clinical significance.
+The supplied results therefore do not show a consistent mean Dice advantage for the transformer configurations over 3D U-Net.
+
+A confidence interval containing zero does not establish equivalence. A statistically detectable difference also does not, by itself, establish clinical importance.
 
 ### Non-inferiority analysis
 
-The predefined non-inferiority margin is 0.01 Dice.
+The predefined non-inferiority margin is 0.01 mean Dice.
 
-For non-inferiority, the lower confidence bound for the transformer-minus-U-Net difference must be greater than -0.01.
+For transformer-minus-U-Net differences, the lower confidence bound must be greater than -0.01 to satisfy this criterion.
 
-None of the four main-test comparisons satisfies this criterion:
-
-| Model | Inference | Lower 95% CI bound | Non-inferiority |
+| Transformer | Inference | Lower 95% CI | Conclusion |
 |---|---|---:|---|
-| Full | Plain | -0.0196 | Not established |
-| Full | TTA | -0.0184 | Not established |
-| Seg4 | Plain | -0.0171 | Not established |
-| Seg4 | TTA | -0.0226 | Not established |
+| Full | Plain | -0.0196 | Non-inferiority not established |
+| Full | TTA | -0.0184 | Non-inferiority not established |
+| Seg4 | Plain | -0.0171 | Non-inferiority not established |
+| Seg4 | TTA | -0.0226 | Non-inferiority not established |
 
-These results do not demonstrate that the transformer models are non-inferior to 3D U-Net under the selected margin.
+None of the four comparisons meets the stated criterion.
+
+The margin should be justified in the research protocol, and the confidence-interval procedure should be documented in the final methods section.
 
 ## External Generalization
 
+External comparisons are reported in:
+
+- `results_v2/stats_ext_groups.txt`
+- `results_v2/stats_ext_verified_groups.txt`
+
+These files contain groups with different definitions and sample sizes. Their results must be interpreted according to each group's actual case membership.
+
 ### Verified zero-shot group: 175 cases
 
-| Model | Inference | Mean Dice difference | 95% CI |
+| Transformer | Inference | Mean difference | 95% CI |
 |---|---|---:|---|
 | Full | Plain | -0.0149 | [-0.0209, -0.0089] |
 | Full | TTA | -0.0143 | [-0.0206, -0.0082] |
 | Seg4 | Plain | -0.0136 | [-0.0195, -0.0077] |
 | Seg4 | TTA | -0.0139 | [-0.0202, -0.0078] |
 
-All four reported confidence intervals are below zero. On this zero-shot group, the transformer models have lower mean Dice than 3D U-Net.
+All four confidence intervals are below zero.
 
-This supports the conclusion that the transformer configurations did not match the U-Net baseline on the evaluated zero-shot cases.
+On this reported zero-shot group, the transformer configurations have lower mean Dice than the 3D U-Net baseline.
 
 ### Verified trained-overlap group: 297 cases
 
-| Model | Inference | Mean Dice difference | 95% CI |
+| Transformer | Inference | Mean difference | 95% CI |
 |---|---|---:|---|
 | Full | Plain | -0.0025 | [-0.0075, +0.0031] |
 | Full | TTA | -0.0036 | [-0.0083, +0.0013] |
 | Seg4 | Plain | -0.0018 | [-0.0068, +0.0037] |
 | Seg4 | TTA | -0.0029 | [-0.0075, +0.0020] |
 
-All four confidence intervals include zero. The results do not show a statistically detectable mean difference for this group under the reported analysis.
+All four confidence intervals include zero. The analysis does not detect a mean difference for these comparisons at the conventional 5% significance level, based on the reported intervals.
 
-This group should not be interpreted as an independent external generalization benchmark if the evaluated cases were used for training. It is useful for investigating the effect of dataset overlap and potential memorization.
+This group is not an independent zero-shot generalization benchmark if the cases were used during training. It is useful for investigating the influence of training overlap.
 
 ### Verified unmatched group: 115 cases
 
-| Model | Inference | Mean Dice difference | 95% CI |
+| Transformer | Inference | Mean difference | 95% CI |
 |---|---|---:|---|
 | Full | Plain | -0.0167 | [-0.0259, -0.0082] |
 | Full | TTA | -0.0142 | [-0.0234, -0.0053] |
 | Seg4 | Plain | -0.0149 | [-0.0239, -0.0064] |
 | Seg4 | TTA | -0.0141 | [-0.0234, -0.0052] |
 
-The confidence intervals are below zero for all four comparisons, indicating lower mean Dice for the transformer configurations in this group.
+All four confidence intervals are below zero, indicating lower mean Dice for the transformer configurations on this reported group.
 
-### Interpretation of external results
+### External group definitions
 
-The difference between the zero-shot and trained-overlap groups suggests that overlap status is important when interpreting external evaluation.
+The supplied reports also contain the following earlier or alternative group definitions:
 
-However, these comparisons alone cannot establish that overlap caused the observed performance differences. Differences in case characteristics, acquisition protocols, data quality, and other dataset properties may also contribute.
+| Group | Cases |
+|---|---:|
+| Original unmatched group | 103 |
+| Original matched-but-not-trained group | 72 |
+| Verified unmatched group | 115 |
+| Verified held-out group | 72 |
+| Verified trained-overlap group | 297 |
+| Verified zero-shot group | 175 |
 
-## Statistical Analysis
+The 103-case and 115-case unmatched groups must not be treated as identical without checking their case manifests. Similarly, the 175-case zero-shot group and the separate verified group counts require explicit documentation of inclusion and exclusion rules.
 
-The supplied result files report the following analyses:
+### Interpretation
 
-- Paired mean Dice differences between each transformer model and 3D U-Net.
-- 95% confidence intervals for the mean difference.
+The reported mean differences are closer to zero in the trained-overlap group than in the zero-shot group. This makes dataset overlap an important factor in interpreting the external evaluation.
+
+However, the group comparisons alone do not establish that overlap caused the observed performance gap. Differences in acquisition protocols, image quality, population, annotations, and other case characteristics may also contribute.
+
+Case-level overlap manifests and the exact matching procedure should accompany any publication based on these results.
+
+## Statistical Methods
+
+The supplied analysis reports:
+
+- Paired mean Dice differences.
+- 95% confidence intervals.
 - Median differences.
 - Wilcoxon signed-rank tests.
-- Non-inferiority assessment using a margin of 0.01 Dice.
-- Comparisons under plain inference and test-time augmentation.
+- A non-inferiority assessment with a 0.01 Dice margin.
+- Separate comparisons for plain inference and TTA.
 
-### Statistical interpretation
+### Recommended reporting standards
 
-The primary comparison should be defined before final reporting, including:
+For reproducibility, the final methods section should specify:
 
-1. The primary model and inference configuration.
-2. The primary metric and aggregation method.
-3. The paired statistical procedure.
-4. The confidence interval method.
-5. The non-inferiority margin and its justification.
-6. The treatment of multiple comparisons.
+1. The primary outcome and model comparison.
+2. Whether Dice is averaged across cases, tumor regions, or both.
+3. The confidence-interval estimation procedure and resampling unit.
+4. The number of bootstrap resamples and random seed, if bootstrap intervals were used.
+5. The paired statistical test and handling of ties or missing values.
+6. The prespecified non-inferiority margin and its rationale.
+7. Whether multiple-comparison adjustments were performed.
+8. The precise definition of each external evaluation group.
 
-Because multiple models, inference settings, and external groups are evaluated, the report should state whether multiplicity correction was used. The supplied text files do not establish that correction was applied.
-
-Confidence intervals and p-values should be interpreted alongside effect sizes and case-level variability.
-
-## Inference Settings
-
-Two inference settings are included:
-
-- **Plain inference:** Standard model inference without test-time augmentation.
-- **TTA:** Test-time augmentation, which combines predictions obtained from transformed inputs according to the implemented evaluation procedure.
-
-Both settings are reported for the main test and verified external groups.
-
-For a fair comparison, the U-Net and transformer predictions must use consistent preprocessing, label mapping, post-processing, and evaluation conventions. The supplied main-test report specifies that both models are post-processed.
-
-The exact transformations, inverse transformations, prediction aggregation, and post-processing operations should be documented from the evaluation code.
+The supplied text files do not independently establish all these implementation details. They should be checked against the analysis scripts before being described as finalized methods.
 
 ## Computational Efficiency
 
-Computational efficiency is an important part of the research question. The project has previously evaluated segmentation quality, multiply-accumulate operations (GMACs), parameter count, inference latency, and memory usage.
+Segmentation accuracy should be assessed alongside model complexity and inference cost.
 
-The repository contains or has referenced an efficiency summary and a Dice-versus-GMACs plot. Their latest values should be checked before publishing a numerical efficiency comparison.
+The project's earlier efficiency evaluation included measurements at an input volume of \(128^3\), including GMACs, parameter count, latency, and peak memory. Final numerical claims should be taken from the current benchmark artifacts and verified against the exact model checkpoints.
 
 Recommended reporting metrics:
 
-| Metric | Purpose |
+| Metric | Interpretation |
 |---|---|
-| Mean Dice | Segmentation overlap |
-| HD95 | Boundary-distance quality |
-| GMACs | Approximate computational workload |
+| Mean Dice | Volumetric overlap quality |
+| HD95 | Boundary-distance error |
+| GMACs | Approximate arithmetic workload |
 | Parameter count | Model size |
 | Inference latency | Runtime under a documented setup |
-| Peak memory | Runtime memory requirements |
+| Peak memory | Runtime memory requirement |
 
-Efficiency measurements should specify input dimensions, hardware, precision, batch size, warm-up iterations, timing procedure, and whether preprocessing and post-processing are included.
+For a fair benchmark, document the hardware, software environment, input shape, precision, batch size, warm-up iterations, timing procedure, and whether preprocessing and post-processing are included.
 
-A lower GMAC count does not automatically imply lower end-to-end latency or better clinical utility.
+A reduction in GMACs does not automatically imply lower end-to-end latency or better clinical performance.
+
+No efficiency ranking is asserted here because the current result summaries supplied for this README do not contain the finalized efficiency table.
+
+## Datasets and Label Mapping
+
+The project's broader experimental work concerns multimodal MRI brain tumor segmentation and BraTS-style tumor subregions.
+
+BraTS provides a standardized benchmark for evaluating brain tumor segmentation methods [2, 3].
+
+Typical BraTS MRI inputs include:
+
+- T1-weighted MRI.
+- Contrast-enhanced T1-weighted MRI.
+- T2-weighted MRI.
+- T2-FLAIR MRI.
+
+For the BraTS label convention used in the project's preprocessing context:
+
+| Label | Region |
+|---:|---|
+| 0 | Background |
+| 1 | Necrotic and non-enhancing tumor core (NCR/NET) |
+| 2 | Peritumoral edema (ED) |
+| 3 | Enhancing tumor (ET) |
+
+**Important:** Label conventions can differ between raw datasets and preprocessing pipelines. Confirm the mapping in the actual loader and saved label arrays before applying this table to any specific experiment.
+
+Dataset preparation should preserve the mapping between MRI modalities, ground-truth labels, case identifiers, and train/validation/test splits.
+
+### External overlap verification
+
+External evaluation should distinguish:
+
+- Cases identified as matching training data.
+- Matched cases explicitly excluded from training.
+- Cases with no detected match.
+- Cases whose matching status remains unresolved.
+
+The matching method, identifiers, exclusion rules, and case counts should be reported. A missing match is not proof that two scans originate from different subjects, and a matching identifier alone is not always proof of image-level duplication.
 
 ## Reproducibility
 
-Run the following commands from the repository root to inspect the currently saved statistical summaries:
+### Inspect the current statistical summaries
+
+Run these commands from the repository root:
 
 ```bash
 cd /workspace/segformer3D
@@ -234,46 +290,87 @@ echo "===== VERIFIED EXTERNAL RESULTS ====="
 cat results_v2/stats_ext_verified_groups.txt
 ```
 
-These commands read existing result files; they do not train models or rerun evaluation.
+These commands only read existing results. They do not train models or rerun evaluation.
 
-### Recommended artifacts to preserve
+### Verify the repository state
 
-- Experiment configuration files.
-- Model checkpoints and checkpoint identifiers.
-- Dataset split manifests.
+```bash
+git status --short
+git log -1 --oneline
+git diff --check
+```
+
+### Recommended artifacts
+
+Preserve the following alongside the final paper or report:
+
+- Model configuration files.
+- Checkpoint filenames and checksums.
+- Dataset version and split manifests.
 - Case-level predictions and metrics.
 - External overlap and matching reports.
-- Label-mapping verification artifacts.
-- Statistical analysis scripts.
+- Label-mapping verification figures.
+- Statistical analysis scripts and arguments.
 - Environment and dependency versions.
-- Efficiency measurements.
-- Final tables and figures.
+- Final efficiency tables and plots.
+- Final main and external results tables.
 
-For reproducibility, record the Git commit, configuration, checkpoint, dataset version, seed, and evaluation command associated with each reported result.
+Record the Git commit, checkpoint, configuration, dataset split, random seed, and evaluation settings for every reported result.
 
-### Reproducing the statistical analysis
-
-Use the project's actual analysis script and documented arguments. The exact command is intentionally not specified here because the supplied result output does not identify the script or its command-line interface.
-
-Do not retrain models simply to reproduce a table if the required predictions and saved outputs already exist.
+Do not retrain a model merely to update the README when the required predictions and evaluation outputs already exist.
 
 ## Limitations
 
-1. **Non-inferiority not established:** The main-test confidence intervals do not satisfy the predefined 0.01 Dice non-inferiority criterion.
-2. **Zero-shot performance gap:** All reported zero-shot mean-difference confidence intervals favor 3D U-Net.
-3. **Potential dataset overlap:** External results must be interpreted in light of matching and training exposure.
-4. **Group-definition differences:** The original and verified external reports use different group sizes. The exact case membership needs to be documented.
-5. **Metric coverage:** The supplied summaries focus on mean Dice. They do not provide enough information to report final HD95 results.
-6. **Multiple comparisons:** The available summaries do not establish whether adjustments for multiple testing were performed.
-7. **Generalizability:** Results from these evaluated cases cannot establish performance on every institution, scanner, or clinical population.
-8. **Efficiency reporting:** Numerical efficiency claims should be taken from the finalized benchmark artifacts, not inferred from segmentation statistics.
+1. **Non-inferiority:** The reported main-test comparisons do not establish non-inferiority at the 0.01 Dice margin.
+2. **Zero-shot generalization:** All reported verified zero-shot confidence intervals favor 3D U-Net in mean Dice.
+3. **Dataset overlap:** Results from cases identified as overlapping with training data should not be interpreted as independent zero-shot generalization.
+4. **Group membership:** The external reports contain differing unmatched-group sizes. Case manifests must resolve the differences.
+5. **Metric coverage:** The supplied statistical summaries do not include final HD95 results.
+6. **Multiple comparisons:** The available summaries do not establish whether multiplicity correction was applied.
+7. **Clinical interpretation:** Statistical differences in Dice do not automatically establish clinical significance.
+8. **Reproducibility:** Final publication requires the exact analysis code, configurations, dataset splits, and evaluation environment.
 
 ## Conclusion
 
-The supplied results show that the evaluated transformer configurations have lower mean Dice than 3D U-Net on the main test and zero-shot external groups. The main-test comparisons do not establish non-inferiority at a 0.01 Dice margin.
+The current results show that the evaluated transformer configurations have lower mean Dice than 3D U-Net on the main test and reported zero-shot external groups. Non-inferiority at a margin of 0.01 has not been established.
 
-In the verified trained-overlap group, the reported mean differences are smaller and the confidence intervals include zero. This highlights the importance of separating genuine zero-shot evaluation from cases that overlap with training data.
+For the verified trained-overlap group, the reported mean differences are smaller and the confidence intervals include zero. This reinforces the need to distinguish training-overlap analyses from genuine zero-shot evaluation.
 
-The appropriate research conclusion is therefore not that the transformer models outperform U-Net, but that their segmentation performance, external generalization, computational requirements, and sensitivity to dataset overlap require joint evaluation.
+The central contribution of this investigation is a structured comparison of segmentation quality, statistical uncertainty, external dataset overlap, and computational efficiency. Final conclusions should be based on verified case membership, complete boundary metrics, and a reproducible statistical protocol.
 
-Further reporting should prioritize transparent case-level overlap verification, finalized HD95 results, reproducible efficiency measurements, and a clearly specified statistical protocol.
+## References
+
+1. **Perera, S., Navard, P., & Yilmaz, A. (2024).** SegFormer3D: An Efficient Transformer for 3D Medical Image Segmentation. *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops*, 4981–4988.  
+   - Paper: https://openaccess.thecvf.com/content/CVPR2024W/DEF-AI-MIA/html/Perera_SegFormer3D_An_Efficient_Transformer_for_3D_Medical_Image_Segmentation_CVPRW_2024_paper.html  
+   - Official project page: https://osupcvlab.github.io/SegFormer3D/  
+   - Official code: https://github.com/OSUPCVLab/SegFormer3D  
+   - DOI: https://doi.org/10.1109/CVPRW63382.2024.00503
+
+2. **Baid, U., et al. (2021).** The RSNA-ASNR-MICCAI BraTS 2021 Benchmark on Brain Tumor Segmentation and Radiogenomic Classification.  
+   - BraTS 2021 challenge information: https://www.med.upenn.edu/cbica/brats2021/  
+   - Dataset and challenge details should be cited using the exact publication corresponding to the dataset release used in the experiments.
+
+3. **Menze, B. H., et al. (2015).** The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS). *IEEE Transactions on Medical Imaging*, 34(10), 1993–2024.  
+   - DOI: https://doi.org/10.1109/TMI.2014.2377694
+
+4. **Çiçek, Ö., Abdulkadir, A., Lienkamp, S. S., Brox, T., & Ronneberger, O. (2016).** 3D U-Net: Learning Dense Volumetric Segmentation from Sparse Annotation. *Medical Image Computing and Computer-Assisted Intervention (MICCAI)*, 424–432.  
+   - DOI: https://doi.org/10.1007/978-3-319-46723-8_49
+
+5. **Reinke, A., et al. (2021).** Understanding metric-related pitfalls in image analysis validation. *Nature Methods*, 18, 1207–1212.  
+   - DOI: https://doi.org/10.1038/s41592-021-01260-5
+
+6. **Müller, D., Soto-Rey, I., & Kramer, F. (2022).** Towards a guideline for evaluation metrics in medical image segmentation. *BMC Research Notes*, 15, 210.  
+   - Article: https://pmc.ncbi.nlm.nih.gov/articles/PMC9208116/
+
+7. **Dice, L. R. (1945).** Measures of the Amount of Ecologic Association Between Species. *Ecology*, 26(3), 297–302.  
+   - DOI: https://doi.org/10.2307/1932409
+
+8. **Wilcoxon, F. (1945).** Individual Comparisons by Ranking Methods. *Biometrics Bulletin*, 1(6), 80–83.  
+   - DOI: https://doi.org/10.2307/3001968
+
+## Citation
+
+If you use this repository in a report, thesis, or publication, cite the original SegFormer3D paper and the exact dataset and evaluation references relevant to your experiments.
+
+The repository's own experimental results should be cited using the project version, Git commit, and associated result artifacts once these have been finalized.
+
