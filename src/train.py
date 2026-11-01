@@ -57,6 +57,9 @@ def build_model(cfg: dict) -> nn.Module:
             base, decoder_dim=m["decoder_dim"], num_classes=m["num_classes"],
             voxel_spacing=tuple(m.get("voxel_spacing", (1.0, 1.0, 1.0))),
         )
+    elif m["type"] in ("segformer3d_official", "segformer3d_official_boundary"):
+        from src.models.official_wrappers import build_official_model
+        model = build_official_model(m, init_ckpt=m.get("init_from_phase1_checkpoint"))
     elif m["type"] == "unet3d":
         model = UNet3D(
             in_channels=m["in_channels"], num_classes=m["num_classes"],
@@ -95,7 +98,7 @@ def build_dataloaders(cfg: dict, return_boundary_target: bool):
     )
     train_loader = DataLoader(
         train_ds, batch_size=cfg["train"]["batch_size"], shuffle=True,
-        num_workers=cfg["train"]["num_workers"], pin_memory=True, drop_last=True,
+        num_workers=cfg["train"]["num_workers"], pin_memory=True, drop_last=True, prefetch_factor=1,
     )
     val_loader = DataLoader(
         val_ds, batch_size=1, shuffle=False,
@@ -156,7 +159,7 @@ def validate(model, loader, is_boundary_model, eval_output, device, mutually_exc
 
         metrics = compute_region_metrics(
             logits, target, threshold=threshold, voxel_spacing=spacing,
-            mutually_exclusive=mutually_exclusive,
+            mutually_exclusive=mutually_exclusive, with_surface=False,
         )
         per_case_results.append(metrics)
     return aggregate_metrics(per_case_results)
@@ -166,10 +169,22 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--resume", default=None)
+    parser.add_argument("--manifest", default=None, help="override data.manifest")
+    parser.add_argument("--data_dir", default=None, help="override data.data_dir")
     args = parser.parse_args()
 
     with open(args.config) as f:
         cfg = yaml.safe_load(f)
+
+    _seed = cfg["train"].get("seed")
+    if _seed is not None:
+        import random as _random
+        import numpy as _np
+        _random.seed(_seed); _np.random.seed(_seed)
+        torch.manual_seed(_seed); torch.cuda.manual_seed_all(_seed)
+        print(f"seed set to {_seed}")
+    if args.manifest: cfg["data"]["manifest"] = args.manifest
+    if args.data_dir: cfg["data"]["data_dir"] = args.data_dir
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if device.type == "cpu":
@@ -177,7 +192,7 @@ def main():
               "for 3D volumes -- this is fine for a shape/smoke test, not for real training.")
 
     model = build_model(cfg).to(device)
-    is_boundary_model = cfg["model"]["type"] == "segformer3d_boundary"
+    is_boundary_model = cfg["model"]["type"].endswith("boundary")
     loss_fn, _ = build_loss(cfg)
     train_loader, val_loader = build_dataloaders(cfg, return_boundary_target=is_boundary_model)
 
@@ -213,6 +228,11 @@ def main():
         start_epoch = ckpt["epoch"] + 1
         best_mean_dice = ckpt.get("best_mean_dice", -1.0)
         print(f"Resumed from {args.resume} at epoch {start_epoch}")
+        for _ in range(start_epoch):
+            scheduler.step()
+        _bp = os.path.join(cfg["train"]["checkpoint_dir"], "best.pt")
+        if os.path.exists(_bp):
+            best_mean_dice = max(best_mean_dice, torch.load(_bp, map_location="cpu").get("best_mean_dice", -1.0))
 
     eval_output = cfg.get("eval", {}).get("eval_output", "logits")
     mutually_exclusive = cfg["data"].get("mutually_exclusive", False)

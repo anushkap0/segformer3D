@@ -1,0 +1,16 @@
+EXT unmatched  full vs unet (p_plain)  metric=dice_mean  n=103
+  mean diff   = -0.0176  95% CI [-0.0269, -0.0089]  detectable
+EXT unmatched  full vs unet (p_tta)  metric=dice_mean  n=103
+  mean diff   = -0.0174  95% CI [-0.0274, -0.0080]  detectable
+EXT unmatched  seg4 vs unet (p_plain)  metric=dice_mean  n=103
+  mean diff   = -0.0157  95% CI [-0.0250, -0.0071]  detectable
+EXT unmatched  seg4 vs unet (p_tta)  metric=dice_mean  n=103
+  mean diff   = -0.0168  95% CI [-0.0267, -0.0073]  detectable
+EXT matched_not_trained  full vs unet (p_plain)  metric=dice_mean  n=72
+  mean diff   = -0.0110  95% CI [-0.0171, -0.0047]  detectable
+EXT matched_not_trained  full vs unet (p_tta)  metric=dice_mean  n=72
+  mean diff   = -0.0100  95% CI [-0.0158, -0.0039]  detectable
+EXT matched_not_trained  seg4 vs unet (p_plain)  metric=dice_mean  n=72
+  mean diff   = -0.0105  95% CI [-0.0163, -0.0045]  detectable
+EXT matched_not_trained  seg4 vs unet (p_tta)  metric=dice_mean  n=72
+  mean diff   = -0.0099  95% CI [-0.0158, -0.0038]  detectable

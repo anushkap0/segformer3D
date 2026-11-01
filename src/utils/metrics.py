@@ -57,6 +57,26 @@ def precision_score(pred: np.ndarray, target: np.ndarray, smooth: float = 1e-5) 
     return float((tp + smooth) / (tp + fp + smooth))
 
 
+def surface_dice_score(pred, target, voxel_spacing=(1.0, 1.0, 1.0), tol_mm=1.0):
+    """Voxel-based normalised surface Dice at a tolerance (not the mesh-area-weighted version).
+    Both masks empty -> 1.0; exactly one empty -> 0.0 (same convention as Dice)."""
+    from scipy.ndimage import binary_erosion, distance_transform_edt
+    pred = pred.astype(bool)
+    target = target.astype(bool)
+    if pred.sum() == 0 and target.sum() == 0:
+        return 1.0
+    if pred.sum() == 0 or target.sum() == 0:
+        return 0.0
+    st = np.ones((3, 3, 3), bool)
+    sp = pred & ~binary_erosion(pred, st)
+    sg = target & ~binary_erosion(target, st)
+    d_to_g = distance_transform_edt(~sg, sampling=voxel_spacing)
+    d_to_p = distance_transform_edt(~sp, sampling=voxel_spacing)
+    a = int((d_to_g[sp] <= tol_mm).sum())
+    b = int((d_to_p[sg] <= tol_mm).sum())
+    return float((a + b) / (sp.sum() + sg.sum()))
+
+
 def compute_region_metrics(
     pred_logits: torch.Tensor,
     target: torch.Tensor,
@@ -64,6 +84,7 @@ def compute_region_metrics(
     threshold: float = 0.5,
     voxel_spacing=(1.0, 1.0, 1.0),
     mutually_exclusive: bool = False,
+    with_surface: bool = True,
 ) -> Dict[str, Dict[str, float]]:
     """pred_logits, target: (C, D, H, W) single-sample tensors (no batch dim).
     Returns {region_name: {"dice": ..., "hd95": ..., "sensitivity": ..., "precision": ...}}
@@ -91,6 +112,7 @@ def compute_region_metrics(
             "hd95": hd95_score(p, t, voxel_spacing),
             "sensitivity": sensitivity_score(p, t),
             "precision": precision_score(p, t),
+            "surface_dice_1mm": surface_dice_score(p, t, voxel_spacing, 1.0) if with_surface else float("nan"),
         }
     return results
 

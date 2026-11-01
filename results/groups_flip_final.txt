@@ -1,0 +1,26 @@
+{'trained': 297, 'matched_untrained': 72, 'unmatched': 115} total 484
+
+mean Dice per group (95% CI), source: results/external_flip
+baseline  | trained: 0.8572 [0.8430,0.8697] | matched_untrained: 0.8516 [0.8217,0.8779] | unmatched: 0.6877 [0.6473,0.7260]
+continued | trained: 0.8631 [0.8495,0.8762] | matched_untrained: 0.8567 [0.8277,0.8820] | unmatched: 0.6857 [0.6459,0.7233]
+noloss    | trained: 0.8651 [0.8511,0.8781] | matched_untrained: 0.8607 [0.8336,0.8834] | unmatched: 0.6892 [0.6491,0.7270]
+full      | trained: 0.8648 [0.8509,0.8779] | matched_untrained: 0.8596 [0.8327,0.8836] | unmatched: 0.6896 [0.6485,0.7281]
+unet      | trained: 0.8683 [0.8544,0.8808] | matched_untrained: 0.8704 [0.8442,0.8928] | unmatched: 0.7010 [0.6618,0.7390]
+
+U-Net minus each transformer (paired)
+trained            vs baseline  n=297 +0.0111 [+0.0053,+0.0165]
+trained            vs continued n=297 +0.0053 [-0.0004,+0.0102]
+trained            vs noloss    n=297 +0.0033 [-0.0024,+0.0083]
+trained            vs full      n=297 +0.0036 [-0.0021,+0.0086]
+matched_untrained  vs baseline  n=72 +0.0188 [+0.0089,+0.0309]
+matched_untrained  vs continued n=72 +0.0137 [+0.0061,+0.0213]
+matched_untrained  vs noloss    n=72 +0.0098 [+0.0035,+0.0161]
+matched_untrained  vs full      n=72 +0.0108 [+0.0038,+0.0182]
+unmatched          vs baseline  n=115 +0.0133 [+0.0048,+0.0221]
+unmatched          vs continued n=115 +0.0153 [+0.0066,+0.0234]
+unmatched          vs noloss    n=115 +0.0118 [+0.0034,+0.0202]
+unmatched          vs full      n=115 +0.0114 [+0.0041,+0.0190]
+unseen             vs baseline  n=187 +0.0154 [+0.0086,+0.0225]
+unseen             vs continued n=187 +0.0147 [+0.0089,+0.0207]
+unseen             vs noloss    n=187 +0.0110 [+0.0055,+0.0169]
+unseen             vs full      n=187 +0.0112 [+0.0059,+0.0167]

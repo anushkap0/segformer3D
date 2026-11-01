@@ -7,3 +7,49 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+# Experiment logs and temporary files
+*.log
+*.bak
+*.tmp
+*.tgz
+*.tar
+*.sha256
+.ext_raw_path
+missing_repro.json
+configs_backup_*/
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Generated experiment logs
+/logs_2017/
+
+# data, models, logs (large)
+data/
+checkpoints*/
+logs/
+*.npy
+*.pt
+*.tgz
+*.zip
+*.tar
+# backups and clutter
+*.bak
+*.log
+nohup.out
+__pycache__/
+.ipynb_checkpoints/
+official_segformer3d/
+prep*.log
+
+# Generated prediction outputs (do not commit)
+/preds/
+/preds_smoke/
+
+# inference-time probability maps (large)
+*.npz
+preds*/

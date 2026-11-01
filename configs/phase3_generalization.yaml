@@ -17,8 +17,8 @@ model:
   checkpoint: checkpoints/phase2/best.pt
 
 source_data:
-  data_dir: data/processed/BraTS
-  manifest: data/processed/BraTS/split_manifest.json
+  data_dir: data/processed/BraTS2021_FULL
+  manifest: data/processed/BraTS2021_FULL/split_manifest.json
 
 target_data:
   data_dir: data/processed/MSD_Task01

@@ -74,7 +74,7 @@ def main():
         cfg = yaml.safe_load(f)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    is_boundary_model = cfg["model"]["type"] == "segformer3d_boundary"
+    is_boundary_model = cfg["model"]["type"].endswith("boundary")
     eval_output = cfg.get("eval", {}).get("eval_output", "logits")
     threshold = cfg.get("eval", {}).get("threshold", 0.5)
     mutually_exclusive = cfg["data"].get("mutually_exclusive", False)

@@ -1,0 +1,21 @@
+candidate matches: 381 | failed verification: 12 ['BRATS_134', 'BRATS_138', 'BRATS_140', 'BRATS_141', 'BRATS_156', 'BRATS_157', 'BRATS_175', 'BRATS_176', 'BRATS_177', 'BRATS_178', 'BRATS_179', 'BRATS_180']
+{'unseen, all (187)': 187, 'unseen without the 12 failed': 175, 'unmatched without the 12 failed': 103}
+
+mean Dice per model
+  unseen, all (187)                baseline 0.7508 continued 0.7516 noloss 0.7552 full 0.7550 unet 0.7662
+  unseen without the 12 failed     baseline 0.7628 continued 0.7645 noloss 0.7682 full 0.7677 unet 0.7808
+  unmatched without the 12 failed  baseline 0.7006 continued 0.7000 noloss 0.7036 full 0.7034 unet 0.7182
+
+U-Net minus each transformer (paired, 95% CI)
+  unseen, all (187)                n=187 vs baseline  +0.0154 [+0.0087, +0.0226]  includes 0: no
+  unseen, all (187)                n=187 vs continued +0.0147 [+0.0089, +0.0207]  includes 0: no
+  unseen, all (187)                n=187 vs noloss    +0.0110 [+0.0056, +0.0166]  includes 0: no
+  unseen, all (187)                n=187 vs full      +0.0112 [+0.0058, +0.0167]  includes 0: no
+  unseen without the 12 failed     n=175 vs baseline  +0.0181 [+0.0115, +0.0251]  includes 0: no
+  unseen without the 12 failed     n=175 vs continued +0.0163 [+0.0106, +0.0223]  includes 0: no
+  unseen without the 12 failed     n=175 vs noloss    +0.0126 [+0.0070, +0.0183]  includes 0: no
+  unseen without the 12 failed     n=175 vs full      +0.0131 [+0.0079, +0.0188]  includes 0: no
+  unmatched without the 12 failed  n=103 vs baseline  +0.0175 [+0.0091, +0.0259]  includes 0: no
+  unmatched without the 12 failed  n=103 vs continued +0.0182 [+0.0099, +0.0266]  includes 0: no
+  unmatched without the 12 failed  n=103 vs noloss    +0.0145 [+0.0062, +0.0233]  includes 0: no
+  unmatched without the 12 failed  n=103 vs full      +0.0148 [+0.0072, +0.0227]  includes 0: no

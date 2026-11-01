@@ -1,0 +1,20 @@
+matched not trained: 72 | in 2021 val split: 46 | in 2021 test split: 26 | other: 0
+{'unseen, all (187)': 187, 'without 2021-val matches': 141, 'without 2021-val matches and the 12': 129}
+
+unseen, all (187): mean Dice baseline 0.7508 continued 0.7516 noloss 0.7552 full 0.7550 unet 0.7662
+  n=187 U-Net vs baseline  +0.0154 [+0.0087, +0.0226]  includes 0: no
+  n=187 U-Net vs continued +0.0147 [+0.0089, +0.0207]  includes 0: no
+  n=187 U-Net vs noloss    +0.0110 [+0.0056, +0.0166]  includes 0: no
+  n=187 U-Net vs full      +0.0112 [+0.0058, +0.0167]  includes 0: no
+
+without 2021-val matches: mean Dice baseline 0.7163 continued 0.7161 noloss 0.7194 full 0.7200 unet 0.7298
+  n=141 U-Net vs baseline  +0.0135 [+0.0059, +0.0213]  includes 0: no
+  n=141 U-Net vs continued +0.0137 [+0.0065, +0.0209]  includes 0: no
+  n=141 U-Net vs noloss    +0.0104 [+0.0032, +0.0176]  includes 0: no
+  n=141 U-Net vs full      +0.0098 [+0.0030, +0.0168]  includes 0: no
+
+without 2021-val matches and the 12: mean Dice baseline 0.7293 continued 0.7303 noloss 0.7338 full 0.7339 unet 0.7462
+  n=129 U-Net vs baseline  +0.0169 [+0.0096, +0.0245]  includes 0: no
+  n=129 U-Net vs continued +0.0159 [+0.0086, +0.0232]  includes 0: no
+  n=129 U-Net vs noloss    +0.0124 [+0.0052, +0.0197]  includes 0: no
+  n=129 U-Net vs full      +0.0123 [+0.0057, +0.0192]  includes 0: no

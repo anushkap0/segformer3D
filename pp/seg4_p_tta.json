@@ -1,0 +1,36 @@
+{
+  "pred_dirs": [
+    "preds/full_s1/val",
+    "preds/full_s2/val",
+    "preds/nol_s1/val",
+    "preds/nol_s2/val"
+  ],
+  "key": "p_tta",
+  "n_val": 125,
+  "pp": {
+    "thr_wt": 0.3,
+    "thr_tc": 0.4,
+    "thr_et": 0.3,
+    "wt_min_cc": 250,
+    "et_min_vol": 0,
+    "hierarchy": true
+  },
+  "val_mean_dice_default_pp": 0.882035560784045,
+  "val_mean_dice_tuned_pp": 0.883779187629385,
+  "per_region_best": {
+    "WT": [
+      0.9098815829411986,
+      0.3,
+      250
+    ],
+    "TC": [
+      0.900550142393879,
+      0.4
+    ],
+    "ET": [
+      0.8402345639445767,
+      0.3,
+      0
+    ]
+  }
+}

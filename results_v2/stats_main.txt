@@ -1,0 +1,32 @@
+TEST  full vs unet (p_plain, both post-processed)  metric=dice_mean  n=126
+  mean diff   = -0.0109  95% CI [-0.0196, -0.0008]  detectable
+  median diff = -0.0158  95% CI [-0.0183, -0.0132]  Wilcoxon p = 8.5e-13  A better in 13% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0196 vs -0.0100);  superiority: no
+ZERO-SHOT  full vs unet (p_plain)  metric=dice_mean  n=175
+  mean diff   = -0.0149  95% CI [-0.0209, -0.0089]  detectable
+  median diff = -0.0077  95% CI [-0.0105, -0.0055]  Wilcoxon p = 3.2e-09  A better in 27% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0209 vs -0.0100);  superiority: no
+TEST  full vs unet (p_tta, both post-processed)  metric=dice_mean  n=126
+  mean diff   = -0.0091  95% CI [-0.0184, +0.0026]  not detectable
+  median diff = -0.0165  95% CI [-0.0185, -0.0128]  Wilcoxon p = 1.3e-13  A better in 12% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0184 vs -0.0100);  superiority: no
+ZERO-SHOT  full vs unet (p_tta)  metric=dice_mean  n=175
+  mean diff   = -0.0143  95% CI [-0.0206, -0.0082]  detectable
+  median diff = -0.0087  95% CI [-0.0111, -0.0061]  Wilcoxon p = 2.3e-09  A better in 29% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0206 vs -0.0100);  superiority: no
+TEST  seg4 vs unet (p_plain, both post-processed)  metric=dice_mean  n=126
+  mean diff   = -0.0074  95% CI [-0.0171, +0.0046]  not detectable
+  median diff = -0.0153  95% CI [-0.0173, -0.0128]  Wilcoxon p = 2.2e-12  A better in 11% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0171 vs -0.0100);  superiority: no
+ZERO-SHOT  seg4 vs unet (p_plain)  metric=dice_mean  n=175
+  mean diff   = -0.0136  95% CI [-0.0195, -0.0077]  detectable
+  median diff = -0.0080  95% CI [-0.0105, -0.0060]  Wilcoxon p = 1.2e-08  A better in 27% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0195 vs -0.0100);  superiority: no
+TEST  seg4 vs unet (p_tta, both post-processed)  metric=dice_mean  n=126
+  mean diff   = -0.0129  95% CI [-0.0226, -0.0023]  detectable
+  median diff = -0.0159  95% CI [-0.0175, -0.0131]  Wilcoxon p = 4.6e-15  A better in 10% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0226 vs -0.0100);  superiority: no
+ZERO-SHOT  seg4 vs unet (p_tta)  metric=dice_mean  n=175
+  mean diff   = -0.0139  95% CI [-0.0202, -0.0078]  detectable
+  median diff = -0.0081  95% CI [-0.0108, -0.0057]  Wilcoxon p = 8.4e-09  A better in 28% of cases
+  non-inferiority (margin 0.01): no (lower bound -0.0202 vs -0.0100);  superiority: no

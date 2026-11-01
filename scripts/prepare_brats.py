@@ -50,6 +50,8 @@ def find_modality_file(case_dir: str, case_id: str, suffix: str) -> str:
 
 def resample_to_spacing(volume: np.ndarray, orig_spacing, target_spacing=(1.0, 1.0, 1.0), order: int = 1) -> np.ndarray:
     zoom_factors = [o / t for o, t in zip(orig_spacing, target_spacing)]
+    if all(abs(f - 1.0) < 1e-3 for f in zoom_factors):   # BraTS is already 1 mm
+        return volume
     return zoom(volume, zoom_factors, order=order)
 
 
@@ -77,6 +79,9 @@ def crop_to_nonzero(image: np.ndarray, label: np.ndarray):
 
 def remap_labels(label: np.ndarray) -> np.ndarray:
     # raw BraTS labels {0,1,2,4} -> contiguous {0,1,2,3}
+    _vals = set(np.unique(label).tolist())
+    if not _vals <= {0, 1, 2, 4}:
+        raise ValueError(f"unexpected BraTS label values {sorted(_vals)} (wrong dataset/format?)")
     out = label.copy()
     out[out == 4] = 3
     return out.astype(np.uint8)
@@ -132,7 +137,8 @@ def main():
     args = parser.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
-    case_dirs = sorted([d for d in glob(os.path.join(args.raw_dir, "*")) if os.path.isdir(d)])
+    # 2017 nests cases inside HGG/ and LGG/: a case = any folder holding a *seg.nii* file
+    case_dirs = sorted({os.path.dirname(p) for p in glob(os.path.join(args.raw_dir, "**", "*seg.nii*"), recursive=True)})
     case_ids = [os.path.basename(d) for d in case_dirs]
 
     print(f"Found {len(case_ids)} cases in {args.raw_dir}")

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/segformer3D/src/evaluate.py", line 18, in <module>
+    import numpy as np
+  File "/usr/local/lib/python3.10/dist-packages/numpy/__init__.py", line 151, in <module>
+    from . import polynomial
+  File "/usr/local/lib/python3.10/dist-packages/numpy/polynomial/__init__.py", line 116, in <module>
+    from .polynomial import Polynomial
+  File "/usr/local/lib/python3.10/dist-packages/numpy/polynomial/polynomial.py", line 86, in <module>
+    from . import polyutils as pu
+  File "/usr/local/lib/python3.10/dist-packages/numpy/polynomial/polyutils.py", line 47, in <module>
+    class RankWarning(UserWarning):
+KeyboardInterrupt

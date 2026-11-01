@@ -18,21 +18,21 @@ model:
   init_from_phase1_checkpoint: checkpoints/phase1/best.pt
 
 data:
-  data_dir: data/processed/BraTS
-  manifest: data/processed/BraTS/split_manifest.json
+  data_dir: data/processed/BraTS2021_FULL
+  manifest: data/processed/BraTS2021_FULL/split_manifest.json
   patch_size: [128, 128, 128]
   mutually_exclusive: false
   return_boundary_target: true
 
 train:
-  batch_size: 2
+  batch_size: 4
   num_workers: 8
   epochs: 200
   optimizer: adamw
   lr: 1.0e-4              # lower than phase1 since warm-starting
   weight_decay: 1.0e-5
   lr_schedule: cosine
-  warmup_epochs: 5
+  warmup_epochs: 10
   loss:
     type: dual_supervision_composite
     region_weight: 1.0

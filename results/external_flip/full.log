@@ -1,0 +1,9 @@
+Loaded checkpoint from epoch 194, reported best_mean_dice=0.8746
+Traceback (most recent call last):
+  File "/workspace/segformer3D/src/evaluate.py", line 130, in <module>
+    main()
+  File "/workspace/segformer3D/src/evaluate.py", line 70, in main
+    manifest = load_split_manifest(cfg["data"]["manifest"])
+  File "/workspace/segformer3D/src/data/brats_dataset.py", line 160, in load_split_manifest
+    with open(manifest_path) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/BraTS2017ext_flip/split_manifest.json'

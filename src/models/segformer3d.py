@@ -290,12 +290,10 @@ class AllMLPDecoder3D(nn.Module):
         fused = torch.cat(projected, dim=1)
         fused = self.fuse(fused)
         decoder_feat = self.dropout(fused)
-        logits = self.classifier(decoder_feat)
-        logits = F.interpolate(logits, size=out_shape, mode="trilinear", align_corners=False)
-        # also return the pre-classifier fused feature map (upsampled) for the
-        # boundary refinement branch to consume in Phase 2
-        fused_up = F.interpolate(fused, size=out_shape, mode="trilinear", align_corners=False)
-        return logits, fused_up
+        logits_lr = self.classifier(decoder_feat)
+        logits = F.interpolate(logits_lr, size=out_shape, mode="trilinear", align_corners=False)
+        # low-res fused features + low-res logits go to the boundary branch
+        return logits, fused, logits_lr
 
 
 # --------------------------------------------------------------------------- #
@@ -337,9 +335,9 @@ class SegFormer3D(nn.Module):
     def forward(self, x: torch.Tensor, return_decoder_features: bool = False):
         in_shape = x.shape[2:]
         feats = self.encoder(x)
-        logits, decoder_feat = self.decoder(feats, out_shape=in_shape)
+        logits, decoder_feat, logits_lr = self.decoder(feats, out_shape=in_shape)
         if return_decoder_features:
-            return logits, decoder_feat
+            return logits, decoder_feat, logits_lr
         return logits
 
     def num_parameters(self) -> int:
