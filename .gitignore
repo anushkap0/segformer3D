@@ -49,3 +49,7 @@ prep*.log
 # Generated prediction outputs (do not commit)
 /preds/
 /preds_smoke/
+
+# inference-time probability maps (large)
+*.npz
+preds*/
